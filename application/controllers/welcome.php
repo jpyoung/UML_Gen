@@ -56,7 +56,7 @@ class Welcome extends CI_Controller {
 	
 		 //$this->load->view('UI_Features/userForm_view');
 	}
-	
+		
 	//function is called when an admin would like to add a new user to the db.
 	function create_new_user() {
 		

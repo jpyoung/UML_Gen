@@ -35,7 +35,7 @@
 		
 	</div>
 	
-	<div style="position:absolute; top: 16px; right: 40px; background-color: blue;">
+	<div style="position:absolute; top: 16px; right: 40px;">
 		
 	    <img src="<? echo base_url(); ?>assets/img/top_right_bigger.png" border="0" usemap="#Map">
 
