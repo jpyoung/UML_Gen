@@ -55,7 +55,11 @@ class Welcome extends CI_Controller {
 		 //$this->load->view('UI_Features/userForm_view');
 	}
 	
-	
+	//function is called when an admin would like to add a new user to the db.
+	function create_new_user() {
+		
+		$this->load->view('create_user_view');
+	}
 	
 	
 	function get_all_users() {
@@ -66,7 +70,7 @@ class Welcome extends CI_Controller {
 	function goto_user_management_page() {
 		
 		$data['user_info'] = $this->get_all_users();
-		$this->load->view('usermanagement', $data);
+		$this->load->view('user_management_view', $data);
 	}
 }
 
