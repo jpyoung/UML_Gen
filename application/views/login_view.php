@@ -17,7 +17,7 @@
 <div id="outerWrapper">
 
 <div id="container">
-	<h1>Login - UML Class Diagram Generator</h1>
+	<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">Login - UML Class Diagram Generator</h1>
 
 	<div id="body">
 		
