@@ -109,7 +109,9 @@ input.txt, textarea {
 .main-nav {
 	background: #3b4e59 url("../img/main-nav-linen.gif") repeat 0 0;
 	border-bottom: 2px solid #04202d;
-	padding: 18px 0;
+	/*existing padding prior to logo*/
+	/*padding: 18px 0;*/
+	padding: 5px 0;
 	position: relative;
 	/*width: 100%;*/
 	width: 100%;

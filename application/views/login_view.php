@@ -11,7 +11,7 @@
 <body>
 
 	<div class="main-nav">
-	asdf
+		<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
 	</div>
 
 <div id="outerWrapper">
