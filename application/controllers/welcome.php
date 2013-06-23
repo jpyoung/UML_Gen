@@ -42,7 +42,9 @@ class Welcome extends CI_Controller {
 	function welcome_page() {
 		$this->auth->check_session();
 	
-		echo "<h3>User Id". $this->session->userdata('user_id') . "</h3>";
+		// echo "<h3>User Id". $this->session->userdata('user_id') . "</h3>";
+		// echo "<h3>Username". $this->session->userdata('username') . "</h3>";
+		
 	
 		$data['user_info'] = $this->get_all_users();
 	

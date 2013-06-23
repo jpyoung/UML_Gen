@@ -10,14 +10,44 @@
 
 	<style type="text/css">
 
-
+	.icon-user {
+	background-position: -168px 0;
+	background-image: url("http://localhost/~youngbuck14188/UML_Gen/assets/img/glyphicons-halflings-white.png");
+	width: 14px;
+	height: 14px;
+	/*display: inline-block;*/
+	}
 	</style>
 </head>
 <body>
 
 
 <div class="main-nav">
-	<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
+	
+	<!-- <div style="margin-left: 30px; width: 300px;">
+		<h3 style="color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
+		<li class="icon-user">1</li>
+	</div>
+	
+	<img style="position:absolute; top: 16px; right: 40px;" src="<? echo base_url(); ?>assets/img/bbar.png"/> -->
+	<div style="margin-left: 30px; width: 300px;">
+		<h3 style="color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
+		
+	</div>
+	
+	<div style="position:absolute; top: 16px; right: 40px; background-color: blue;">
+		
+	    <img src="<? echo base_url(); ?>assets/img/top_right_bigger.png" border="0" usemap="#Map">
+
+		<p style="position:absolute; left: 47px; top: 1px;">Username: <?php echo $this->session->userdata('username'); ?></p>
+		<map name="Map">
+	      <area shape="rect" coords="10,4,41,35" href="#" alt="user profile link">
+	      <area shape="rect" coords="210,5,240,36" href="http://localhost/~youngbuck14188/UML_Gen/" alt="logout button">
+	    </map>
+	
+		
+	</div>
+	
 </div>
 
 	<div id="outerWrapper">
