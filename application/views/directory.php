@@ -8,7 +8,18 @@
 	 * Name this file index.php and place in the directory.
 	 */
 	// Define the full path to your folder from root
-	$path = "/Applications/XAMPP/xamppfiles/htdocs/xampp/CodeIgniter/application/views/uploaded_files/";
+	// $path = "/Applications/XAMPP/xamppfiles/htdocs/xampp/CodeIgniter/application/views/uploaded_files/";
+	
+	//path set for the uploaded_files folder in the directory outside of the application directory
+	 $path = getcwd() . "/uploaded_files/";
+	
+	//path set for the uploaded files folder in the directory inside application/views directory
+	//$path = getcwd() . "/application/views/uploaded_files/";
+	
+	
+	echo $path;
+	// echo "<p> cwd: " . getcwd() . "</p>";
+	// echo "<br/><br/><p>Base URL: " . base_url() . "</p>";
 	
 	// Open the folder
 	$dir_handle = @opendir($path) or die("Unable to open $path");

@@ -4,7 +4,7 @@
 
 	
 	<meta charset="utf-8">
-	<title>Welcome to BuyAnA.com! We will help you solve your programming needs!</title>
+	<title>Form</title>
 
 	<style type="text/css">
 
@@ -64,47 +64,69 @@
 		border: 1px solid #D0D0D0;
 		-webkit-box-shadow: 0 0 8px #D0D0D0;
 	}
+	
+	
+	/*jy added login css*/
+	#login{
+		width: 260px;
+	}
+	
+	input.txt, textarea {
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border: 1px solid #999;
+		background: #ffffff;
+		padding: 5px 2px;
+	}
+	
+	.button {
+		border: 1px solid #00487a;
+		-moz-border-radius: 5px;
+		text-align: center;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		background: #0567ad;
+		padding: 8px 9px 8px;
+		text-shadow: #00487a 1px 1px 0;
+		color: #fff;
+		cursor: pointer;
+	}
+	
 	</style>
 </head>
 <body>
 
+<?php
 
-<div style="float:right;">
 
-<!-- <a href="/welcome/goto_user_management_page">User Management</a> -->
-<!-- <a href="http://localhost/xampp/CodeIgniter/welcome/goto_user_management_page/">User Management</a> -->
-<?php 
-echo anchor('welcome/goto_user_management_page', 'User Management');
 ?>
 
-</div>
 
 <div id="container">
-	<h1>UML Class Diagram Generator</h1>
+	<h1>Upload - Action Response - UML Class Diagram Generator</h1>
 
 	<div id="body">
-		
-		<p>This is the site where you can upload your .java files and have a UML class diagram generated for you.</p>
-		<p>We know it can be a hassle to create a UML class diagram. That's why we created this generator for you to use!</p> 
-		<!-- This is the form to upload a file. -->
 			
-		<?php echo form_open_multipart('upload/do_upload');?>
+		<?php
+			if (isset($error)) {
+				echo "<h3>" . $error . "</h3>";
+			} else {
+				echo "<h3>Congratulations! Your file was uploaded successfully</h3>";
+			}
+		?>
 		
-			Please choose a file: <input type="file" name="userfile" size="20" />
-			<input type="submit" value="upload" />
+		<br/>
+		<p>Below is information about the <b><?php echo $upload_data['client_name']; ?> </b>file you just uploaded</p>
+		<ul>
+			<?php foreach ($upload_data as $item => $value):?>
+				<li><?php echo $item;?>: <?php echo $value;?></li>
+			<?php endforeach; ?>
+		</ul>
 
- 		</form>
-	</div>
+		<!-- link that takes the user back to the welcome_message view page -->
+		<p><?php echo anchor('welcome', 'Return to the Home Page.'); ?></p>
 	
-	<div id="body">
-	<h2>Paste in your existing Java file.</h2><br />
-	<textarea rows="4" cols="50">
-	Insert your text here...
-	</textarea> <br />
-	<!--  Generate Button -->
-	<input type="submit" value="Generate" /> <br /><hr />
-	
-	<?php include('directory.php'); ?>
 	
 	</div>
 
