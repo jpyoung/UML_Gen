@@ -65,7 +65,7 @@ class Welcome extends CI_Controller {
 	
 	
 	function get_all_users() {
-		return $this->db->query('select * from user');
+		return $this->db->query('select * from user')->result();
 	}
 	
 	

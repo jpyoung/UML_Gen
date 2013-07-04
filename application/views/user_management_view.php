@@ -47,45 +47,27 @@
 				<th>Name</th>
 				<th>Address</th>
 				<th>City</th>
-				<th>S</th>
-				<th>User id</th>
+				<th>State</th>
+				<th>Zip</th>
+				<th>Email</th>
+				<th>User Type</th>
 			</tr>
+			  <?php foreach($user_info as $row): ?>
+				<tr>
+					<td><?php echo $row->u_id; ?></td>
+					<td><?php echo $row->u_username; ?></td>
+					<td><?php echo $row->u_name; ?></td>
+					<td><?php echo $row->u_address; ?></td>
+					<td><?php echo $row->u_city; ?></td>
+					<td><?php echo $row->u_state; ?></td>
+					<td><?php echo $row->u_zip; ?></td>
+					<td><?php echo $row->u_email; ?></td>
+					<td><?php echo $row->user_type; ?></td>
+				</tr>
+			  <?php endforeach; ?>
+			
 		</table>
 		
-		<?php
-
-// usermanagement.php - The purpose of this file is to efficiently add, delete, and view different users to and from the database called UML_Gen
-
-// Displays users in a table
-<<<<<<< HEAD
-		
-		
-
-	echo "<table border='1'>";
-	echo "<tr><th>User id</th><th>Username</th><th>Name</th><th>Address</th><th>City</th><th>S</th><th>User id</th></tr>";
-=======
-	echo "<table>";
-	echo "<tr><th>User id</th><th>Username</th><th>Name</th><th>Address</th><th>City</th><th>State</th><th>User id</th></tr>";
->>>>>>> master
-	foreach ($user_info->result() as $row)
-	{
-		echo "<tr>";
-		echo "<td>" . $row->u_id . "</td>";
-		echo "<td>" . $row->u_username . "</td>";
-		echo "<td>" . $row->u_name . "</td>";
-		echo "<td>" . $row->u_address . "</td>";
-		echo "<td>" . $row->u_city . "</td>";
-		echo "<td>" . $row->u_state . "</td>";
-		echo "<td>" . $row->u_zip . "</td>";
-		echo "</tr>";
-	
-	}
-	echo "</table>";
-
-
-?> 
-
-
 <!-- link that takes the user back to the welcome_message view page -->
 <p><?php echo anchor('welcome', 'Return to the Home Page.'); ?></p>
 
