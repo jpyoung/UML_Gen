@@ -44,8 +44,8 @@
 // usermanagement.php - The purpose of this file is to efficiently add, delete, and view different users to and from the database called UML_Gen
 
 // Displays users in a table
-	echo "<table border='1'>";
-	echo "<tr><th>User id</th><th>Username</th><th>Name</th><th>Address</th><th>City</th><th>S</th><th>User id</th></tr>";
+	echo "<table>";
+	echo "<tr><th>User id</th><th>Username</th><th>Name</th><th>Address</th><th>City</th><th>State</th><th>User id</th></tr>";
 	foreach ($user_info->result() as $row)
 	{
 		echo "<tr>";
