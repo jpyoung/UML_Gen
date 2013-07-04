@@ -7,8 +7,41 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
 
-	<style type="text/css">
+	<style>
 
+
+	#newspaper-b
+	{
+		font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+		font-size: 12px;
+		margin: 45px;
+		/*width: 600px;*/
+		text-align: left;
+		border-collapse: collapse;
+		border: 1px solid #69c;
+	}
+	#newspaper-b th
+	{
+		padding: 15px 10px 10px 10px;
+		font-weight: normal;
+		font-size: 14px;
+		color: #039;
+	}
+	#newspaper-b tbody
+	{
+		background: #e8edff;
+	}
+	#newspaper-b td
+	{
+		padding: 10px;
+		color: #669;
+		border-top: 1px dashed #fff;
+	}
+	#newspaper-b tbody tr:hover td
+	{
+		color: #339;
+		background: #d0dafd;
+	}
 
 	</style>
 	
@@ -50,7 +83,8 @@
 		<h1>Registered Users</h1>
 		
 		
-		<table border="1">
+		<table id="newspaper-b" summary="2007 Major IT Companies' Profit">
+		    <thead>
 			<tr>
 				<th>User id</th>
 				<th>Username</th>
@@ -62,6 +96,13 @@
 				<th>Email</th>
 				<th>User Type</th>
 			</tr>
+			</thead>
+			    <tfoot>
+		    	<tr>
+		        	<td colspan="9"><em>Above are all the users in the DB.</em></td>
+		        </tr>
+		    </tfoot>
+			<tbody>
 			  <?php foreach($user_info as $row): ?>
 				<tr>
 					<td><?php echo $row->u_id; ?></td>
@@ -75,7 +116,7 @@
 					<td><?php echo $row->user_type; ?></td>
 				</tr>
 			  <?php endforeach; ?>
-			
+			</tbody>
 		</table>
 		
 <!-- link that takes the user back to the welcome_message view page -->
