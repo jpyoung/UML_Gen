@@ -56,7 +56,7 @@
 		    <img src="<? echo base_url(); ?>assets/img/top_right_bigger.png" border="0" usemap="#Map">
 			<p style="position:absolute; left: 47px; top: 1px;">Username: <?php echo $this->session->userdata('username'); ?></p>
 			<map name="Map">
-		      <area shape="rect" coords="10,4,41,35" href="#" alt="user profile link">
+		      <area shape="rect" coords="10,4,41,35" href="<?php echo base_url(); ?>index.php/welcome" alt="user profile link">
 		      <area shape="rect" coords="210,5,240,36" href="<?php echo base_url(); ?>" alt="logout button">
 		    </map>
 		</div>
@@ -78,7 +78,7 @@
 		<!-- link that takes the user the create a new user page form page -->
 		<p><?php echo anchor('welcome/create_new_user', 'Create New User'); ?></p>
 		
-	
+		<button>Create new User</button>
 	
 		<h1>Registered Users</h1>
 		
