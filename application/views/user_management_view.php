@@ -76,9 +76,12 @@
 		<p>User Management Page. Authorized users only.</p>
 		
 		<!-- link that takes the user the create a new user page form page -->
-		<p><?php echo anchor('welcome/create_new_user', 'Create New User'); ?></p>
+		<!-- <p><?php echo anchor('welcome/create_new_user', 'Create New User'); ?></p> -->
 		
-		<button>Create new User</button>
+		<form method="post" action="<?php echo base_url();?>index.php/welcome/create_new_user" >
+			<button href="#" class="button">Create New User</button>       
+		</form>
+		
 	
 		<h1>Registered Users</h1>
 		
