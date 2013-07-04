@@ -8,6 +8,7 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
 
+	
 
 </head>
 <body>
@@ -54,7 +55,7 @@ echo anchor('welcome/goto_user_management_page', 'User Management');
 </div>
 
 	<div id="container">
-		<h1 style="background: #0567ad; color: white; font-size: 21px;">UML - File Uploader</h1>
+		<h1 style="background: #0567ad; color: white; font-size: 21px;">File Uploader</h1>
 
 		<div id="body">
 		
@@ -87,8 +88,9 @@ echo anchor('welcome/goto_user_management_page', 'User Management');
 	
 	<br/>
 	<div id="container">
-		<h1 style="background: #0567ad; color: white; font-size: 21px;">UML - Uploaded Files</h1>
-
+		<!-- <h1 style="background: #0567ad; color: white; font-size: 21px;">Uploaded Files</h1> -->
+		<h1>Uploaded Files</h1>
+		
 		<div id="body">
 
 			<?php include('directory.php'); ?>
