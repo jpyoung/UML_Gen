@@ -7,6 +7,20 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
 	
+	<style>
+	
+	#container {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 20%;
+		
+		width: 700px;
+		border: 1px solid #D0D0D0;
+		-webkit-box-shadow: 0 0 8px #D0D0D0;
+	}
+	
+	</style>
+	
 </head>
 <body>
 
@@ -17,7 +31,7 @@
 <div id="outerWrapper">
 
 <div id="container">
-	<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">Login - UML Class Diagram Generator</h1>
+	<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">Login</h1>
 
 	<div id="body">
 		

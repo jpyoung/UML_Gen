@@ -8,16 +8,7 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
 
-	<style type="text/css">
 
-	.icon-user {
-	background-position: -168px 0;
-	background-image: url("http://localhost/~youngbuck14188/UML_Gen/assets/img/glyphicons-halflings-white.png");
-	width: 14px;
-	height: 14px;
-	/*display: inline-block;*/
-	}
-	</style>
 </head>
 <body>
 
