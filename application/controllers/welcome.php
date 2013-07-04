@@ -89,6 +89,18 @@ class Welcome extends CI_Controller {
 
 		return $containerHeaderColor;
 	}
+	
+	function update_user_preferences() {
+		$data = array(
+			"user_id" => $this->session->userdata('user_id'),
+			"background_color" => $_POST['backgroundColor'],
+			"panel_background_color" => $_POST['panelColor'],
+			"container_header_color" => $_POST['headerColor']
+		);
+		$this->db->where('user_id', $this->session->userdata('user_id'));
+		$this->db->update("user_site_pref", $data);
+		$this->goto_user_management_page();
+	}
 		
 	//function is called when an admin would like to add a new user to the db.
 	function create_new_user() {
@@ -106,6 +118,11 @@ class Welcome extends CI_Controller {
 		
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_management_view', $data);
+	}
+	
+	function goto_user_preferences() {
+		$data['user_info'] = $this->get_all_users();
+		$this->load->view('user_preferences_view', $data);
 	}
 
 	//function is used to insert a new user

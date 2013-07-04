@@ -58,6 +58,10 @@
 echo anchor('welcome/goto_user_management_page', 'User Management');
 ?>
 
+<?php 
+echo anchor('welcome/goto_user_preferences', 'User Preferences');
+?>
+
 </div>
 
 	<div id="container">
