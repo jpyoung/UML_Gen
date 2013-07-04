@@ -17,7 +17,7 @@
 	//$path = getcwd() . "/application/views/uploaded_files/";
 	
 	
-	echo $path;
+	echo "<p><b>Upload Directory Path:</b> " . $path . "</p>";
 	// echo "<p> cwd: " . getcwd() . "</p>";
 	// echo "<br/><br/><p>Base URL: " . base_url() . "</p>";
 	

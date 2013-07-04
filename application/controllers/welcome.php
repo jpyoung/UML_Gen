@@ -48,13 +48,58 @@ class Welcome extends CI_Controller {
 	
 		$data['user_info'] = $this->get_all_users();
 	
-		//$data['user_info'] = $this->db->get('user');
-	
-		//print_r($data['user_info']);
+		//gathering the user preferences
+		$temp_pref = $this->retrieve_user_preferences();
+		
+		//Setting the colors that were retrieved
+		$data['background_color'] = $temp_pref['background_color'];
+		$data['panel_background_color'] = $temp_pref['panel_background_color'];
+		$data['container_header_color'] = $temp_pref['container_header_color'];
+		
 	
 		$this->load->view('welcome_message', $data);
 	
-		 //$this->load->view('UI_Features/userForm_view');
+	}
+	
+	//this function is used to retrieve the user preferences that are
+	//stored in the user_site_pref table.
+	function retrieve_user_preferences() {
+		
+		$query_string = 'select * from user_site_pref where user_id =' . $this->session->userdata('user_id');
+
+		$query = $this->db->query($query_string);
+		
+		$pref_array = array(
+			"background_color" => 'white',
+			"panel_background_color" => 'white',
+			"container_header_color" => '#0567ad'
+		);
+		
+		if ($query->num_rows() > 0) {
+			//found a row in the user_site_pref table for the given user
+			$ro = $query->row_array();
+			$pref_array['background_color'] = $ro['background_color'];
+			$pref_array['panel_background_color'] = $ro['panel_background_color'];
+			$pref_array['container_header_color'] = $ro['container_header_color'];
+			return $pref_array;
+		} else {
+			//echo "<h1>Invalid</h1>";
+			return $pref_array;
+		}
+
+		return $containerHeaderColor;
+	}
+	
+	function update_user_preferences() {
+		$data = array(
+			"user_id" => $this->session->userdata('user_id'),
+			"background_color" => $_POST['backgroundColor'],
+			"panel_background_color" => $_POST['panelColor'],
+			"container_header_color" => $_POST['headerColor']
+		);
+		$this->db->where('user_id', $this->session->userdata('user_id'));
+		$this->db->update("user_site_pref", $data);
+		$this->goto_user_management_page();
 	}
 		
 	//function is called when an admin would like to add a new user to the db.
@@ -65,7 +110,7 @@ class Welcome extends CI_Controller {
 	
 	
 	function get_all_users() {
-		return $this->db->query('select * from user');
+		return $this->db->query('select * from user')->result();
 	}
 	
 	
@@ -73,6 +118,11 @@ class Welcome extends CI_Controller {
 		
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_management_view', $data);
+	}
+	
+	function goto_user_preferences() {
+		$data['user_info'] = $this->get_all_users();
+		$this->load->view('user_preferences_view', $data);
 	}
 
 	//function is used to insert a new user
