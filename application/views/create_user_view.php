@@ -3,9 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Create a user</title>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
 </head>
 
 <body>
+	<div class="main-nav">
+			<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">Create New User</h3>
+		</div>
+<div style="float-right">
+</div>
+<div id="container">
+	<div id "body">
+<div align="center">	
 <form id="form1" name="form1" method="post" action="">
   <h1>Create a user</h1>
   <p>Username: 
@@ -41,5 +50,9 @@
   </p>
   <p>&nbsp;</p>
 </form>
+</div>
+</div>
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+</div>
 </body>
 </html>
