@@ -2,25 +2,18 @@
 //this is the controller class for file uploads none ajax method. 
 class Upload extends CI_Controller {
 
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
 	}
 
-	function index()
-	{
+	function index() {
 		$this->load->view('upload_form', array('error' => ' ' ));
 	}
 
-	function do_upload()
-	{
-		// $this->insert_file_into_db($this->upload->data());
-		
+	function do_upload() {
 		$config['upload_path'] = './uploaded_files/';
-
 		$config['allowed_types'] = '*';
-
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
 		$config['max_height']  = '768';
@@ -43,9 +36,8 @@ class Upload extends CI_Controller {
 		}
 	}
 	
+	//Function is used to insert file information into the file table of the database.
 	function insert_file_into_db($data) {
-		//echo "Jack Young";
-		
 		$info = array(
 			 'f_id'=> null,
 			 'u_id' => $this->session->userdata('user_id'),
@@ -55,9 +47,7 @@ class Upload extends CI_Controller {
 			 'f_last_modified'=> null
 			);
 		
-		$this->db->insert('file', $info);
-		print_r($info);
-		
+		$this->db->insert('file', $info);	
 	}
 	
 	
