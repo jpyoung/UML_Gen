@@ -15,6 +15,8 @@ class Upload extends CI_Controller {
 
 	function do_upload()
 	{
+		// $this->insert_file_into_db($this->upload->data());
+		
 		$config['upload_path'] = './uploaded_files/';
 
 		$config['allowed_types'] = '*';
@@ -35,8 +37,50 @@ class Upload extends CI_Controller {
 		{
 			$data = array('upload_data' => $this->upload->data());
 
+			$this->insert_file_into_db($this->upload->data());
+			
 			$this->load->view('upload_result_view', $data);
 		}
 	}
+	
+	function insert_file_into_db($data) {
+		//echo "Jack Young";
+		
+		$info = array(
+			 'f_id'=> null,
+			 'u_id' => $this->session->userdata('user_id'),
+			 'f_name' => $data['file_name'],
+			 'f_path' => $data['file_path'],
+			'f_upload_date' => date("Y-m-d H:i:s"),
+			 'f_last_modified'=> null
+			);
+		
+		$this->db->insert('file', $info);
+		print_r($info);
+		
+	}
+	
+	
+	
+
+	
+	
 }
+
+
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
