@@ -15,44 +15,62 @@
 <div id="container">
 	<div id "body">
 <div align="center">	
-<form id="form1" name="form1" method="post" action="">
-  <h1>Create a user</h1>
-  <p>Username: 
+
+
+<!-- <form id="form1" name="form1" method="post" action=""> -->
+  <?php echo form_open_multipart('welcome/insert_new_user');?>
+<table>
+  <th><h1>Create a user</h1></th>
+
+  <tr>
+    <td><strong>Username:</strong> </td>
     <label for="username"></label>
-    <input type="text" name="username" id="username" />
-  </p>
-  <p>Password: 
+    <td><input type="text" name="username" id="username" /></td>
+  </tr>
+  <tr>
+    <td><strong>Password:</strong> </td>
     <label for="password"></label>
-    <input type="password" name="password" id="password" />
-  </p>
-  <p>Full name: 
+    <td><input type="password" name="password" id="password" /></td>
+   </tr>
+  <tr>
+    <td><strong>Full Name:</strong> </td>
     <label for="name"></label>
-    <input type="text" name="name" id="name" />
-  </p>
-  <p>Street:    
+    <td><input type="text" name="name" id="name" /></td>
+  </tr>
+  <tr>
+    <td><strong>Street:</strong> </td>
     <label for="street"></label>
-    <input type="text" name="street" id="street" />
-  </p>
-  <p>City: 
+     <td><input type="text" name="street" id="street" /></td>
+  </tr>
+  <tr>
+    <td><strong>City:</strong> </td>
     <label for="city"></label>
-    <input type="text" name="city" id="city" />
-  </p>
-  <p>State: 
+    <td><input type="text" name="city" id="city" /></td>  </tr>
+  <tr>
+    <td><strong>State:</strong> </td>
     <label for="state"></label>
-    <input type="text" name="state" id="state" />
-  </p>
-  <p>Zip: 
+     <td><input type="text" name="state" id="state" /></td>
+  </tr>
+  <tr>
+    <td><strong>Zip:</strong> </td>
     <label for="zip"></label>
-    <input type="text" name="zip" id="zip" />
-  </p>
-  <p>
-    <input type="submit" name="create" id="create" value="Create User" />
-  </p>
+    <td><input type="text" name="zip" id="zip" /></td>  
+  </tr>
+  <tr>
+    <td><strong>Email:</strong> </td>
+    <label for="email"></label>
+    <td><input type="text" name="email" id="email" /></td>  
+  </tr>
+    <tr>
+      <td><input type="submit" name="create" id="create" value="Create User" /></td>
+    </tr>
+</table>
   <p>&nbsp;</p>
 </form>
 </div>
 </div>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
+
 </body>
 </html>
