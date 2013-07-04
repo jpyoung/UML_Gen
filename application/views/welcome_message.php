@@ -27,6 +27,42 @@
 			background: <?php echo $panel_background_color; ?>;
 		}
 	
+		
+		/*the below styles are for the table, same style used on the usermanagement page table*/
+		#newspaper-b
+		{
+			font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+			font-size: 12px;
+			margin: 45px;
+			/*width: 600px;*/
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid #69c;
+		}
+		#newspaper-b th
+		{
+			padding: 15px 10px 10px 10px;
+			font-weight: normal;
+			font-size: 14px;
+			color: #039;
+		}
+		#newspaper-b tbody
+		{
+			background: #e8edff;
+		}
+		#newspaper-b td
+		{
+			padding: 10px;
+			color: #669;
+			border-top: 1px dashed #fff;
+		}
+		#newspaper-b tbody tr:hover td
+		{
+			color: #339;
+			background: #d0dafd;
+		}
+	
+	
 	</style>
 
 </head>
@@ -104,6 +140,36 @@ echo anchor('welcome/goto_user_preferences', 'User Preferences');
 		<div id="body">
 
 			<?php include('directory.php'); ?>
+	
+			
+			<br/><hr><br/>
+			<table id="newspaper-b" summary="2007 Major IT Companies' Profit">
+			    <thead>
+				<tr>
+					<th>File ID</th>
+					<th>User ID</th>
+					<th>File Name</th>
+					<th>Upload Date</th>
+					<th>Last Modified</th>
+				</tr>
+				</thead>
+				    <tfoot>
+			    	<tr>
+			        	<td colspan="5"><em>File Count: <?php echo count($files_info); ?></em></td>
+			        </tr>
+			    </tfoot>
+				<tbody>
+					<?php foreach($files_info as $row): ?>
+					<tr>
+						<td><?php echo $row->f_id; ?></td>
+						<td><?php echo $row->u_id; ?></td>
+						<td><?php echo $row->f_name; ?></td>
+						<td><?php echo $row->f_upload_date; ?></td>
+						<td><?php echo $row->f_last_modified; ?></td>
+					</tr>
+				  	<?php endforeach; ?>
+				</tbody>
+			</table>
 	
 		</div>  <!-- end div body -->
 

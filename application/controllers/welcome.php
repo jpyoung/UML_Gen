@@ -39,15 +39,11 @@ class Welcome extends CI_Controller {
 	
 	}
 	
+	
 	function welcome_page() {
-		$this->auth->check_session();
-	
-		// echo "<h3>User Id". $this->session->userdata('user_id') . "</h3>";
-		// echo "<h3>Username". $this->session->userdata('username') . "</h3>";
 		
-	
-		$data['user_info'] = $this->get_all_users();
-	
+		$this->auth->check_session();
+		
 		//gathering the user preferences
 		$temp_pref = $this->retrieve_user_preferences();
 		
@@ -56,10 +52,16 @@ class Welcome extends CI_Controller {
 		$data['panel_background_color'] = $temp_pref['panel_background_color'];
 		$data['container_header_color'] = $temp_pref['container_header_color'];
 		
+		//getting all the users information
+		$data['user_info'] = $this->get_all_users();
+		
+		//getting all the file information 
+		$data['files_info'] = $this->get_all_files();
 	
 		$this->load->view('welcome_message', $data);
 	
 	}
+	
 	
 	//this function is used to retrieve the user preferences that are
 	//stored in the user_site_pref table.
@@ -69,6 +71,7 @@ class Welcome extends CI_Controller {
 
 		$query = $this->db->query($query_string);
 		
+		//below are the default pre array colors for the site
 		$pref_array = array(
 			"background_color" => 'white',
 			"panel_background_color" => 'white',
@@ -90,6 +93,9 @@ class Welcome extends CI_Controller {
 		return $containerHeaderColor;
 	}
 	
+	
+	//This function is used to update the users preferences.
+	//It is called from the user_preferences_view php page.  
 	function update_user_preferences() {
 		$data = array(
 			"user_id" => $this->session->userdata('user_id'),
@@ -101,6 +107,7 @@ class Welcome extends CI_Controller {
 		$this->db->update("user_site_pref", $data);
 		$this->goto_user_management_page();
 	}
+	
 		
 	//function is called when an admin would like to add a new user to the db.
 	function create_new_user() {
@@ -108,22 +115,31 @@ class Welcome extends CI_Controller {
 		$this->load->view('create_user_view');
 	}
 	
-	
+	//used to query the db and return all the users. 
 	function get_all_users() {
 		return $this->db->query('select * from user')->result();
 	}
 	
+	//used to query the db and return all the file table.
+	function get_all_files() {
+		return $this->db->query('select * from file')->result();
+	}
 	
+	
+	//this is used to go to the user management view page. 
 	function goto_user_management_page() {
 		
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_management_view', $data);
 	}
 	
+	
+	//used to go to the user preferences view page.
 	function goto_user_preferences() {
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_preferences_view', $data);
 	}
+
 
 	//function is used to insert a new user
 	function insert_new_user() {
