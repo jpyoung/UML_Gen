@@ -133,17 +133,19 @@ echo anchor('welcome/goto_user_preferences', 'User Preferences');
 	<!-- bottom div container -->
 	
 	<br/>
-	<div id="container">
+	<div  style="width: 630px;" id="container">
 		<!-- <h1 style="background: #0567ad; color: white; font-size: 21px;">Uploaded Files</h1> -->
 		<h1 class="containerHeader">Uploaded Files</h1>
 		
 		<div id="body">
 
-			<?php include('directory.php'); ?>
-	
 			
-			<br/><hr><br/>
-			<table id="newspaper-b" summary="2007 Major IT Companies' Profit">
+			<?php
+			 	$path = getcwd() . "/uploaded_files/";
+				echo "<p style='padding-left: 45px;'><b>Upload Directory Path:</b> " . $path . "</p>";
+			?>
+			
+			<table id="newspaper-b">
 			    <thead>
 				<tr>
 					<th>File ID</th>
