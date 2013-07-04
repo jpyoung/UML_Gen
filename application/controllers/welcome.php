@@ -75,19 +75,20 @@ class Welcome extends CI_Controller {
 		$this->load->view('user_management_view', $data);
 	}
 
+	//function is used to insert a new user
 	function insert_new_user() {
 		$info = array(
-"u_id" => null,
-"u_username" => $_POST['username'],
-"u_password" => $_POST['password'],
-"u_name" => $_POST['name'],
-"u_address" => $_POST['street'],
-"u_city" => $_POST['city'],
-"u_state" => $_POST['state'],
-"u_zip" => $_POST['zip'],
-"u_email" => $_POST['email'],
-"user_type" => 1
-			);
+			"u_id" => null,
+			"u_username" => $_POST['username'],
+			"u_password" => $_POST['password'],
+			"u_name" => $_POST['name'],
+			"u_address" => $_POST['street'],
+			"u_city" => $_POST['city'],
+			"u_state" => $_POST['state'],
+			"u_zip" => $_POST['zip'],
+			"u_email" => $_POST['email'],
+			"user_type" => 1
+		);
 
 		$this->db->insert("user", $info);
 		$this->goto_user_management_page();
