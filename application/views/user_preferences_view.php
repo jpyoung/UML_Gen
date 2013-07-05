@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>User Preferences</title>
+	<title>UML_Gen</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
 
 </head>
@@ -13,7 +13,7 @@
 	?>
 
 	<div class="main-nav">
-			<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">User Preferences</h3>
+			<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
 		</div>
 
 	<div style="float-right">
