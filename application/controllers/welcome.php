@@ -154,6 +154,12 @@ class Welcome extends CI_Controller {
 	}
 	
 	
+	//used to go to the user_profile view
+	function goto_user_profile_view() {
+		$this->load->view('user_profile_view');
+	}
+	
+	
 	//function is used to get user by the passed in id
 	//and return the resulting query
 	function get_user_by_id($id) {
