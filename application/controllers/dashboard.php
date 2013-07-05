@@ -203,5 +203,18 @@ class Dashboard extends CI_Controller {
 		$this->db->insert("user", $info);
 		$this->goto_user_management_page();
 	}
+	
+	
+	function change_password() {
+		
+		$username = $_POST['username'];
+		$newPass = $_POST['newPass'];
+		$confirmPass = $_POST['confirmPass'];
+		
+		echo "user= " . $username . " new pass= " . $newPass . " confirmPass= " . $confirmPass;
+		
+		// $v =  "Something is work";
+		// 	echo $v;
+	}
 
 }

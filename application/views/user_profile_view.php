@@ -13,6 +13,8 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	
+	
+	
 	<script>
 
 		$(function() {
@@ -42,8 +44,58 @@
 		    return false;
 
 		  });
+		
+		  $("#resetPB").click(function() {
+		
+				var username = $("input#pro_username").val();
+				var newPass = $("input#pro_password").val();
+				var confirmPass = $("input#pro_confirm_password").val();
+		
+				var holder = 'username=' +  username + '&newPass=' + newPass + '&confirmPass=' + confirmPass;
+		
+				$.ajax({		
+					   url: 'http://localhost/~youngbuck14188/UML_Gen/index.php/dashboard/change_password',
+				            data: holder,
+				            type:'POST',
+							dataType: 'text',
+				            success : function(data){                
+				            	console.log("successfully ajax call : " + data);			               
+							},
+							error: function (XHR, status, response) {
+						        alert('fail');
+						    }
+				});
+			
+		});
+		
+		
 
 		});
+		
+		function save_profile_changes() {
+			alert("Save Changes button was pressed");
+		}
+		
+		// function reset_password() {
+		// 	
+		// 	var username = $("input#pro_username").val();
+		// 	var newPass = $("input#pro_password").val();
+		// 	var confirmPass = $("input#pro_confirm_password").val();
+		// 	
+		// 	var holder = {username: username, pass: newPass, confirmPass: confirmPass};
+		// 	
+		// 	$.ajax({		
+		// 		   url: '<?php echo base_url();?>index.php/dashboard/change_password',
+		// 	            data: holder,
+		// 	            type:'POST',
+		// 				dataType: 'json',
+		// 				cache: false,
+		// 	            success : function(){                
+		// 	            	alert("YOLO");			               
+		// 			}
+		// 			
+		// 	});
+		// }
 
 	</script>
 
@@ -158,7 +210,7 @@
 		margin-left: 50px;
 	}
 	
-	#edit_p {
+	.edit_p {
 	width: 260px;
 	}
 	
@@ -273,81 +325,81 @@
 
 			<div class="toggler">
 			<div id="edit-profile-card">
-			<form>
+			<!-- <form> -->
 				<fieldset class="profile">
 					<legend><h3>Change Password</h3></legend>
 						<table id="change_pass">
 							<tr>
 								<td>Username</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_username">
+									<input class="edit_p txt" id="pro_username" type="text" name="profile_username">
 								</td>
 							</tr>
 							<tr>
 								<td>New Password</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_password">
+									<input class="edit_p txt" id="pro_password" type="text" name="profile_password">
 								</td>
 							</tr>
 							<tr>
 								<td>Confirm</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="confirm_profile_password">
+									<input class="edit_p txt" id="pro_confirm_password" type="text" name="confirm_profile_password">
 								</td>
 							</tr>
 						</table>
-						<button class="button">Reset Password</button>
+						<button class="button" id="resetPB">Reset Password</button>
 				</fieldset>
-			</form>
+			<!-- </form> -->
 
 			<br/>
 			<hr>
 
-			<form>
+			<!-- <form> -->
 				<fieldset class="profile">
 					<legend><h3>Your Information</h3></legend>
 						<table id="change_pass">
 							<tr>
 								<td>Name</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_name">
+									<input class="edit_p txt" type="text" name="profile_name" value="<?php echo $user_info->u_name; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Email</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_email">
+									<input class="edit_p txt" type="text" name="profile_email" value="<?php echo $user_info->u_email; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Address</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_address">
+									<input class="edit_p txt" type="text" name="profile_address" value="<?php echo $user_info->u_address; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>City</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_city">
+									<input class="edit_p txt" type="text" name="profile_city" value="<?php echo $user_info->u_city; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>State</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_state">
+									<input class="edit_p txt" type="text" name="profile_state" value="<?php echo $user_info->u_state; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Zip</td>
 								<td class="tb_pad_left">
-									<input id="edit_p" class="txt" type="text" name="profile_zip">
+									<input class="edit_p txt" type="text" name="profile_zip" value="<?php echo $user_info->u_zip; ?>">
 								</td>
 							</tr>
 
 						</table>
-						<button class="button">Save Changes</button>
+						<button class="button" onclick="save_profile_changes();">Save Changes</button>
 				</fieldset>
-			</form>
+			<!-- </form> -->
 
 			</div>  <!-- end div edit-profile-card -->
 
