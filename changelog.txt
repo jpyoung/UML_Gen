@@ -1,0 +1,31 @@
+----Change Log ---------
+Create On: 07-04-2013
+------------------------
+
+
+----JY----
+removed the <?php include('directory.php'); ?> from the welcome_message.php file.  We no longer will display
+the physical files in the upload directory.  We will now be using the db as a reference to what is in the
+upload directory. 
+----JY----
+
+
+----JY----
+removed the following code from the internal style sheet
+
+body {
+	background: <?php echo $background_color; ?>;
+}
+
+.containerHeader {
+	/*background: #0567ad;*/
+	background: <?php echo $container_header_color; ?>;
+	color: white;
+	font-size: 21px;
+}
+
+#container {
+	background: <?php echo $panel_background_color; ?>;
+}
+
+----JY----

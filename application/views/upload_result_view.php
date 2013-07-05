@@ -125,7 +125,7 @@
 		</ul>
 
 		<!-- link that takes the user back to the welcome_message view page -->
-		<p><?php echo anchor('welcome', 'Return to the Home Page.'); ?></p>
+		<p><?php echo anchor('dashboard', 'Return to the Home Page.'); ?></p>
 	
 	
 	</div>
