@@ -204,7 +204,7 @@ class Dashboard extends CI_Controller {
 		$this->goto_user_management_page();
 	}
 	
-	
+	//used to change users password on the user profile view page
 	function change_password() {
 		
 		//using the current users id to query update
@@ -215,11 +215,8 @@ class Dashboard extends CI_Controller {
 		$confirmPass = $_POST['confirmPass'];
 		
 		//echo "currentPass= " . $currentPass . " new pass= " . $newPass . " confirmPass= " . $confirmPass;
-		
-		
 		if ($this->session->userdata('password') == $currentPass) {
 			//The password they logged in with matches the password they entered into to update their password
-			
 			if($newPass == $confirmPass) {
 				//newPassword and confirm passwords do in fact match
 				$this->load->model('profile_model');
@@ -228,14 +225,37 @@ class Dashboard extends CI_Controller {
 			} else {
 				//the new and confirm passwords do not match
 				echo 'Invalid, the new and confirm passwords do not match';
-			}
-			
+			}	
 		} else {
 			//The current password they entered does not match
 			echo 'Error, the current password.';
-		}
-		
-		
+		}	
 	}
+	
+	
+	//used to save the profile user information on the user profile view page
+	function save_profile_user_info() {
+		echo "Called save profile function";
+		// 	var tempString = 'name=' + profName + "&email=" + profEmail + "&address=" + profAddress;
+		// 	tempString += "&city=" + profCity + "&state=" + profState + "&zip=" + profZip;
+		// 
+		// $user_id = $_POST['userId'];
+		// $user_info_submitted = array(
+		// 	'u' => $_POST['username'], 
+		// 	'password'=> $_POST['password'], 
+		// 	'location' => $_POST['location'], 
+		// 	'email' => $_POST['email'], 
+		// 	'phone' => $_POST['phone'],
+		// 	'admin' => $_POST['admin']
+		// );
+	}
+	
+	function edit_user_info($profile_data, $whereAt)
+	{
+		 $this->db->where('user_id',$whereAt);
+	     $this->db->update('users', $profile_data);	
+	}
+	
+	
 
 }

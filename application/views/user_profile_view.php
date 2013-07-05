@@ -84,6 +84,38 @@
 			
 		});
 		
+		$("#profileSaveChangesBTN").click(function() {
+			//alert("Profile Save Changes Button Pressed");
+			//pro_name pro_email pro_address pro_city pro_state pro_zip profileSaveChangesBTN
+			
+			var profName = $("input#pro_name").val();
+			var profEmail = $("input#pro_email").val();
+			var profAddress = $("input#pro_address").val();
+			var profCity = $("input#pro_city").val();
+			var profState = $("input#pro_state").val();
+			var profZip = $("input#pro_zip").val();
+			
+			var tempString = 'name=' + profName + "&email=" + profEmail + "&address=" + profAddress;
+			tempString += "&city=" + profCity + "&state=" + profState + "&zip=" + profZip;
+			
+			$.ajax({		
+				   url: '<?php echo base_url(); ?>index.php/dashboard/save_profile_user_info',
+			            data: tempString,
+			            type:'POST',
+						dataType: 'text',
+			            success : function(data){                
+			            	console.log("successfully ajax call : " + data);
+							
+			
+						               
+						},
+						error: function (XHR, status, response) {
+					        alert('fail');
+					    }
+			});
+			
+		});
+		
 		
 
 		});
@@ -101,26 +133,7 @@
 			alert("Save Changes button was pressed");
 		}
 		
-		// function reset_password() {
-		// 	
-		// 	var username = $("input#pro_username").val();
-		// 	var newPass = $("input#pro_password").val();
-		// 	var confirmPass = $("input#pro_confirm_password").val();
-		// 	
-		// 	var holder = {username: username, pass: newPass, confirmPass: confirmPass};
-		// 	
-		// 	$.ajax({		
-		// 		   url: '<?php echo base_url();?>index.php/dashboard/change_password',
-		// 	            data: holder,
-		// 	            type:'POST',
-		// 				dataType: 'json',
-		// 				cache: false,
-		// 	            success : function(){                
-		// 	            	alert("YOLO");			               
-		// 			}
-		// 			
-		// 	});
-		// }
+	
 
 	</script>
 
@@ -415,42 +428,41 @@
 							<tr>
 								<td>Name</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_name" value="<?php echo $user_info->u_name; ?>">
+									<input class="edit_p txt" id="pro_name" type="text" name="profile_name" value="<?php echo $user_info->u_name; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Email</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_email" value="<?php echo $user_info->u_email; ?>">
+									<input class="edit_p txt" id="pro_email" type="text" name="profile_email" value="<?php echo $user_info->u_email; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Address</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_address" value="<?php echo $user_info->u_address; ?>">
+									<input class="edit_p txt" id="pro_address" type="text" name="profile_address" value="<?php echo $user_info->u_address; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>City</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_city" value="<?php echo $user_info->u_city; ?>">
+									<input class="edit_p txt" id="pro_city" type="text" name="profile_city" value="<?php echo $user_info->u_city; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>State</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_state" value="<?php echo $user_info->u_state; ?>">
+									<input class="edit_p txt" id="pro_state" type="text" name="profile_state" value="<?php echo $user_info->u_state; ?>">
 								</td>
 							</tr>
 							<tr>
 								<td>Zip</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" type="text" name="profile_zip" value="<?php echo $user_info->u_zip; ?>">
+									<input class="edit_p txt" id="pro_zip" type="text" name="profile_zip" value="<?php echo $user_info->u_zip; ?>">
 								</td>
 							</tr>
-
 						</table>
-						<button class="button" onclick="save_profile_changes();">Save Changes</button>
+						<button class="button" id="profileSaveChangesBTN">Save Changes</button>
 				</fieldset>
 			<!-- </form> -->
 
