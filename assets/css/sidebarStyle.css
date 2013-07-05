@@ -21,6 +21,7 @@
 	.navi .main-side_nav > li {
 	    position: relative;
 	    margin: 1px;
+		margin-bottom: 5px;
 	}
 	
 	li {

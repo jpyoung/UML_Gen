@@ -151,7 +151,11 @@ class Dashboard extends CI_Controller {
 	
 	//used to go to the user_profile view
 	function goto_user_profile_view() {
-		$this->load->view('user_profile_view');
+		
+		//gathering the user information from the DB. 
+		$data['user_info'] = $this->get_user_by_id($this->session->userdata('user_id'));
+		
+		$this->load->view('user_profile_view', $data);
 	}
 	
 	
