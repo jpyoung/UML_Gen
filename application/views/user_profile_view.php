@@ -18,6 +18,10 @@
 	<script>
 
 		$(function() {
+			
+			//hiding the msg boxes in the profile change password section
+			$("div#profile-pass-good").hide();
+			$("div#profile-pass-error").hide();
 
 			//hiding all the positions when the page loads. 
 			$("div.toggler").hide();
@@ -47,11 +51,11 @@
 		
 		  $("#resetPB").click(function() {
 		
-				var username = $("input#pro_username").val();
+				var currentPassword = $("input#pro_current_password").val();
 				var newPass = $("input#pro_password").val();
 				var confirmPass = $("input#pro_confirm_password").val();
 		
-				var holder = 'username=' +  username + '&newPass=' + newPass + '&confirmPass=' + confirmPass;
+				var holder = 'currentPass=' +  currentPassword + '&newPass=' + newPass + '&confirmPass=' + confirmPass;
 		
 				$.ajax({		
 					   url: 'http://localhost/~youngbuck14188/UML_Gen/index.php/dashboard/change_password',
@@ -59,7 +63,19 @@
 				            type:'POST',
 							dataType: 'text',
 				            success : function(data){                
-				            	console.log("successfully ajax call : " + data);			               
+				            	console.log("successfully ajax call : " + data);
+								if (data == "Password Update Successful") {
+									//console.log("True");
+									clear_change_password_fields();
+									$("div#profile-pass-good").show();
+									$('div#profile-pass-good').delay(2000).fadeOut('slow');
+								} else {
+									console.log("False");
+									$("div#profile-pass-error").show();
+									$('div#profile-pass-error').delay(5000).fadeOut('slow');
+								}
+				
+							               
 							},
 							error: function (XHR, status, response) {
 						        alert('fail');
@@ -71,6 +87,15 @@
 		
 
 		});
+		
+		//When the users successfully changes his or her password, this function will be called
+		//to clear those password form fields. 
+		function clear_change_password_fields() {
+			console.log('clear method called');
+			$("input#pro_current_password").val("");
+			$("input#pro_password").val("");
+			$("input#pro_confirm_password").val("");
+		}
 		
 		function save_profile_changes() {
 			alert("Save Changes button was pressed");
@@ -232,6 +257,27 @@
 		padding: 5px 2px;
 	}
 	
+	
+	/*error messageing */
+	.msg-error {
+		border-color: #f3abab;
+		background: #f9c9c9;
+	}
+	
+	.msg-good {
+		border-color: #228B22;
+		background: #90EE90;
+	}
+	
+	.msg {
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border: 1px solid;
+		margin: 0 0;
+		padding: 0 0 0 10px;
+	}
+	
 	</style>
 
 
@@ -330,9 +376,9 @@
 					<legend><h3>Change Password</h3></legend>
 						<table id="change_pass">
 							<tr>
-								<td>Username</td>
+								<td>Current Password</td>
 								<td class="tb_pad_left">
-									<input class="edit_p txt" id="pro_username" type="text" name="profile_username">
+									<input class="edit_p txt" id="pro_current_password" type="text" name="profile_current_password">
 								</td>
 							</tr>
 							<tr>
@@ -348,7 +394,14 @@
 								</td>
 							</tr>
 						</table>
-						<button class="button" id="resetPB">Reset Password</button>
+						<button style="margin-top: 9px;" class="button" id="resetPB">Reset Password</button>
+						<div id="profile-pass-good" class="msg msg-good" style="float:right;margin:9px 30px 0 0; width:150px;">
+		                  <p id="profmsgmsg" style="font-size: 12px;">Change Completed</p>
+		                </div>
+						<div id="profile-pass-error" class="msg msg-error" style="float:right;margin:9px 30px 0 0; width:150px;">
+		                  <p id="profmsgmsg" style="font-size: 12px;">Invalid</p>
+		                </div>
+		
 				</fieldset>
 			<!-- </form> -->
 

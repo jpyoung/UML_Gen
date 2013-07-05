@@ -207,14 +207,35 @@ class Dashboard extends CI_Controller {
 	
 	function change_password() {
 		
-		$username = $_POST['username'];
+		//using the current users id to query update
+		$where_at = $this->session->userdata('user_id');
+		
+		$currentPass = $_POST['currentPass'];
 		$newPass = $_POST['newPass'];
 		$confirmPass = $_POST['confirmPass'];
 		
-		echo "user= " . $username . " new pass= " . $newPass . " confirmPass= " . $confirmPass;
+		//echo "currentPass= " . $currentPass . " new pass= " . $newPass . " confirmPass= " . $confirmPass;
 		
-		// $v =  "Something is work";
-		// 	echo $v;
+		
+		if ($this->session->userdata('password') == $currentPass) {
+			//The password they logged in with matches the password they entered into to update their password
+			
+			if($newPass == $confirmPass) {
+				//newPassword and confirm passwords do in fact match
+				$this->load->model('profile_model');
+				$did_password_change_work = $this->profile_model->profile_change_password($newPass, $where_at);
+				echo $did_password_change_work;
+			} else {
+				//the new and confirm passwords do not match
+				echo 'Invalid, the new and confirm passwords do not match';
+			}
+			
+		} else {
+			//The current password they entered does not match
+			echo 'Error, the current password.';
+		}
+		
+		
 	}
 
 }
