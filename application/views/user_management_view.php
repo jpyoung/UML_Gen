@@ -36,7 +36,7 @@
 <div id="outerWrapper">
 
 
-<div id="container">
+<div id="container" style="min-width: 960px;">
 	<h1>User Management</h1>
 
 	<div id="body">
