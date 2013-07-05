@@ -1,10 +1,36 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>UML_Gen</title>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
+	
+	<meta charset="utf-8">
+	<title>User Preferences</title>
 
+	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
+
+	<link href="<?php echo base_url(); ?>assets/css/main_page_layout.css" rel='stylesheet' type='text/css'>
+
+	<link href="<?php echo base_url(); ?>assets/css/sidebarStyle.css" rel='stylesheet' type='text/css'>
+	
 </head>
 <body>
+
+	<div class="main-nav">
+		<!-- loading the partial topNavBar_loggedIn view -->
+		<?php include('common/topNavBar_loggedIn.php'); ?>
+	</div>  <!-- end div main-nav -->
+
+
+<div id="belowNavWrapper">
+	<div id="wrapper">
+		
+		<div id="sidebar">
+			<div id="side_buffer_top"></div>
+			<!-- loading the partial sidebar_nav view -->
+			<?php include('common/sidebar_nav.php'); ?>
+		</div>  <!-- end div sidebar -->
+		
+		<!-- Main content area -->
+<div id="content">
 	<?php 
 		$background = "white";
 		$panelBackground = "black";
@@ -12,14 +38,11 @@
 
 	?>
 
-	<div class="main-nav">
-			<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
-		</div>
+	<div id="outerWrapper">
 
-	<div style="float-right">
-	</div>
 
-	<div id="container">
+	<div id="container" style="min-width: 960px;">
+
 			<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">User Preferences</h1>
 		<div id "body">
 			<div align="center">
@@ -56,10 +79,16 @@
 		</form>
 
 
-	</div>
-		</div>
+	</div>  <!-- end div container -->
+		
+		
+		<!-- </div> -->
 			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 			</div>
-</body>
+		</div> <!-- end div content -->
+	</div>  <!-- end div wrapper -->
+</div>  <!-- end div belowNavWrapper -->
 
+
+</body>
 </html>
