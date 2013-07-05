@@ -37,7 +37,7 @@
 		
 		
 				<div style="width: 630px" id="containerr">
-					<h1 class="containerHeader">File Uploader</h1>
+					<h1 class="containerHeader">User Profile</h1>
 
 					<div id="body">
 
