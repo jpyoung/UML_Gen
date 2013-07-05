@@ -11,6 +11,42 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/sidebarStyle.css" rel='stylesheet' type='text/css'>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	
+	<script>
+
+		$(function() {
+
+			//hiding all the positions when the page loads. 
+			$("div.toggler").hide();
+
+			//setting the default button text
+			$("#editProfileButton").text('Edit');
+
+			// call the effect when view all positions is clicked
+			$( "#editProfileButton" ).click(function() {
+				
+				var temp = $("#editProfileButton").text();
+				
+				if (temp == "Edit") {
+					$("#editProfileButton").text('Done Editing');
+				} else {
+					//when the Done Editing button is clicked again, the button text
+					//is changed back to edit. 
+					$("#editProfileButton").text('Edit');
+				}
+				
+				//run the effect
+		 		$("div.toggler").toggle();
+
+		    return false;
+
+		  });
+
+		});
+
+	</script>
+
 	<style>
 	
 	.profile-card {
@@ -101,6 +137,49 @@
 		text-align: right;
 	}
 	
+	
+	/*profile editing css*/
+	#edit-profile-card {
+		background-color: white;
+		width: 646px;
+		padding-bottom: 20px;
+		border: 1px dashed black;
+		margin-left: 190px;
+	}
+	
+	fieldset.profile {
+		width: 450px;
+		border: 1px solid #CCCCCC;
+		border-radius: 12px;
+		/*padding: 16px 15px 15px 15px;*/
+		/*margin: -6px 0 0 0;*/
+		background: url(http://localhost/~youngbuck14188/UML_Gen/assets/img/back.png);
+		padding-left: 40px;
+		margin-left: 50px;
+	}
+	
+	#edit_p {
+	width: 260px;
+	}
+	
+	.tb_pad_left {
+		padding-left: 12px;
+		padding-top: 8px;
+	}
+	
+	.change_pass tr {
+		
+	}
+	
+	input.txt, textarea {
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border: 1px solid #999;
+		background: #ffffff;
+		padding: 5px 2px;
+	}
+	
 	</style>
 
 
@@ -183,13 +262,97 @@
 
 		            <div class="profile-aux">
 		                <div class="member-connections">
-		                    <button class="button">Edit</button>
+		                    <button class="button" id="editProfileButton">Edit</button>
 		                </div><!-- end div member-connections -->
 		            </div><!-- end div profile-aux -->
 		        </div><!-- end div profile-overview -->
 		    </div><!-- end div profile-card -->		
 		
 
+			<br/><br/>
+
+			<div class="toggler">
+			<div id="edit-profile-card">
+			<form>
+				<fieldset class="profile">
+					<legend><h3>Change Password</h3></legend>
+						<table id="change_pass">
+							<tr>
+								<td>Username</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_username">
+								</td>
+							</tr>
+							<tr>
+								<td>New Password</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_password">
+								</td>
+							</tr>
+							<tr>
+								<td>Confirm</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="confirm_profile_password">
+								</td>
+							</tr>
+						</table>
+						<button class="button">Reset Password</button>
+				</fieldset>
+			</form>
+
+			<br/>
+			<hr>
+
+			<form>
+				<fieldset class="profile">
+					<legend><h3>Your Information</h3></legend>
+						<table id="change_pass">
+							<tr>
+								<td>Name</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_name">
+								</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_email">
+								</td>
+							</tr>
+							<tr>
+								<td>Address</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_address">
+								</td>
+							</tr>
+							<tr>
+								<td>City</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_city">
+								</td>
+							</tr>
+							<tr>
+								<td>State</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_state">
+								</td>
+							</tr>
+							<tr>
+								<td>Zip</td>
+								<td class="tb_pad_left">
+									<input id="edit_p" class="txt" type="text" name="profile_zip">
+								</td>
+							</tr>
+
+						</table>
+						<button class="button">Save Changes</button>
+				</fieldset>
+			</form>
+
+			</div>  <!-- end div edit-profile-card -->
+
+
+			</div>  <!-- end div toggler -->
 
 				
 
