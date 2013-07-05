@@ -106,8 +106,7 @@
 
 </head>
 <body>
-
-
+	
 	<div class="main-nav">
 		<!-- loading the partial topNavBar_loggedIn view -->
 		<?php include('common/topNavBar_loggedIn.php'); ?>
@@ -135,49 +134,49 @@
 
 		        <div class="profile-overview">
 		            <div class="profile-overview-content">
-		                <h1>Jack Young</h1>
+		                <h1><?php echo $user_info->u_name; ?></h1>
 
 		                <table id="profile-table">
 		                    <tr>
 		                        <th>username</th>
 
-		                        <td>demo</td>
+		                        <td><?php echo $user_info->u_username; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>password</th>
 
-		                        <td>demo123</td>
+		                        <td><?php echo $user_info->u_password; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>email</th>
 
-		                        <td>jackp@vayoungs.us</td>
+		                        <td><?php echo $user_info->u_email; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>Address</th>
 
-		                        <td>demo</td>
+		                        <td><?php echo $user_info->u_address; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>City</th>
 
-		                        <td>Centreville</td>
+		                        <td><?php echo $user_info->u_city; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>State</th>
 
-		                        <td>VA</td>
+		                        <td><?php echo $user_info->u_state; ?></td>
 		                    </tr>
 
 		                    <tr>
 		                        <th>Zip</th>
 
-		                        <td>20120</td>
+		                        <td><?php echo $user_info->u_zip; ?></td>
 		                    </tr>
 		                </table>
 		            </div><!-- end div profile-overview-content -->
