@@ -58,8 +58,8 @@ class Welcome extends CI_Controller {
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
 	
-		$this->load->view('welcome_message', $data);
-	
+		// $this->load->view('welcome_message', $data);
+		$this->load->view('dashboard_view', $data);
 	}
 	
 	
