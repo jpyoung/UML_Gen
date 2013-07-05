@@ -139,6 +139,45 @@ class Welcome extends CI_Controller {
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_preferences_view', $data);
 	}
+	
+	//used to go ot the detailed_user_view page called from the user_management_view.php page.
+	//accepts the user_id of the selected user
+	function goto_detailed_user_view($id) {
+		
+		//grabbing the individual users information
+		$data['user_info'] = $this->get_user_by_id($id);
+		
+		//grabbing the all the files associated with this user id
+		$data['user_files'] = $this->get_files_by_user($id);
+		
+		$this->load->view('detailed_user_view', $data);
+	}
+	
+	
+	//function is used to get user by the passed in id
+	//and return the resulting query
+	function get_user_by_id($id) {
+		$this->db->where('u_id = ',$id);
+        $res = $this->db->get('user');
+       	
+		if($res->num_rows){
+			return $res->row();
+		} 
+		return false;
+	}
+	
+	
+	//function is used to get all the files uploaded
+	//by the passed in user id. Returns the resulting query. 
+	function get_files_by_user($user_id) {
+		$this->db->where('u_id = ',$user_id);
+        $res = $this->db->get('file');
+       	
+		if($res->num_rows){
+			return $res->result();
+		} 
+		return false;
+	}
 
 
 	//function is used to insert a new user

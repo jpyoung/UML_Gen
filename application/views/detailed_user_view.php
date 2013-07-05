@@ -69,61 +69,71 @@
 </div>
 
 <div id="container">
-	<h1>User Management</h1>
+	<h1>Detailed User View</h1>
 
 	<div id="body">
 		
-		<p>User Management Page. Authorized users only.</p>
-		
-		<!-- link that takes the user the create a new user page form page -->
-		<!-- <p><?php echo anchor('welcome/create_new_user', 'Create New User'); ?></p> -->
-		
-		<form method="post" action="<?php echo base_url();?>index.php/welcome/create_new_user" >
-			<button href="#" class="button">Create New User</button>       
-		</form>
-		
-	
-		<h1>Registered Users</h1>
+		<p>Below provides a detailed view on the selected user from the user management page.</p>
 		
 		
-		<table id="newspaper-b" summary="2007 Major IT Companies' Profit">
-		    <thead>
+		
+		<table border="1">
 			<tr>
-				<th>User id</th>
-				<th>Username</th>
-				<th>Name</th>
-				<th>Address</th>
-				<th>City</th>
-				<th>State</th>
-				<th>Zip</th>
-				<th>Email</th>
-				<th>User Type</th>
+				<th>u_id</th>
+				<th>u_username</th>
+				<th>u_password</th>
+				<th>u_name</th>
+				<th>u_address</th>
+				<th>u_city</th>
+				<th>u_state</th>
+				<th>u_zip</th>
+				<th>u_email</th>
+				<th>user_type</th>
 			</tr>
-			</thead>
-			    <tfoot>
-		    	<tr>
-		        	<td colspan="9"><em>Above are all the users in the DB.</em></td>
-		        </tr>
-		    </tfoot>
-			<tbody>
-			  <?php foreach($user_info as $row): ?>
-				<tr>
-					<td><?php echo $row->u_id; ?></td>
-					<td><?php echo anchor('welcome/goto_detailed_user_view/' . $row->u_id , $row->u_username)?></td>
-					<td><?php echo $row->u_name; ?></td>
-					<td><?php echo $row->u_address; ?></td>
-					<td><?php echo $row->u_city; ?></td>
-					<td><?php echo $row->u_state; ?></td>
-					<td><?php echo $row->u_zip; ?></td>
-					<td><?php echo $row->u_email; ?></td>
-					<td><?php echo $row->user_type; ?></td>
-				</tr>
-			  <?php endforeach; ?>
-			</tbody>
+			<tr>
+				<td><?php echo $user_info->u_id; ?></td>
+				<td><?php echo $user_info->u_username; ?></td>
+				<td><?php echo $user_info->u_password; ?></td>
+				<td><?php echo $user_info->u_name; ?></td>
+				<td><?php echo $user_info->u_address; ?></td>
+				<td><?php echo $user_info->u_city; ?></td>
+				<td><?php echo $user_info->u_state; ?></td>
+				<td><?php echo $user_info->u_zip; ?></td>
+				<td><?php echo $user_info->u_email; ?></td>
+				<td><?php echo $user_info->user_type; ?></td>
+			</tr>
 		</table>
 		
+		<br/><hr><br/>
+		<p>Files that were uploaded by this individual user</p>	
+		
+		
+		<?php if ($user_files != ''): ?>
+		<table border="1">
+			<tr>
+					<th>File ID</th>
+					<th>User ID</th>
+					<th>File Name</th>
+					<th>Upload Date</th>
+					<th>Last Modified</th>
+			</tr>	
+			<?php foreach($user_files as $row): ?>
+			<tr>
+				<td><?php echo $row->f_id; ?></td>
+				<td><?php echo $row->u_id; ?></td>
+				<td><?php echo $row->f_name; ?></td>
+				<td><?php echo $row->f_upload_date; ?></td>
+				<td><?php echo $row->f_last_modified; ?></td>
+			</tr>
+		  	<?php endforeach; ?>
+		</table>
+		<?php else:?>
+			<h3>Did not find any files associated to this user.</h3>
+		<?php endif; ?>
+		
+		<br/>
 <!-- link that takes the user back to the welcome_message view page -->
-<p><?php echo anchor('welcome', 'Return to the Home Page.'); ?></p>
+<p><?php echo anchor('welcome/goto_user_management_page', 'Return to the Home Page.'); ?></p>
 
 	</div>
 
@@ -134,5 +144,3 @@
 
 </body>
 </html>
-
-  

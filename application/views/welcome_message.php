@@ -81,15 +81,13 @@
 			background: #d7d7d7;
 		    width: 100%;
 		    height: 100%;
-		    /*overflow:hidden;*/
-
 		}
+		
 		#sidebar {
 			/*background-color: orange;*/
 		    float:left;
 		    width:300px;
 			height: 100%;
-			
 		}
 		
 		#content {
@@ -104,8 +102,6 @@
 		
 		#containerr{
 			background: white;
-			/*margin: 10px;*/
-			
 			margin-top: 10px;
 			margin-left: 40px;
 			border: 1px solid #D0D0D0;
@@ -117,9 +113,7 @@
 			/*background: url(http://localhost/~youngbuck14188/UML_Gen/assets/img/sidebar.png) left repeat-y;*/
 			
 			background: #d7d7d7;
-		/*	border-top: 1px solid #000000;
-					border-bottom: 1px solid #bababa;*/
-			height: 50px;
+			height: 30px;
 		}
 		
 		li {
@@ -131,8 +125,7 @@
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			
-			margin-bottom: 15px;
-			
+			margin-bottom: 15px;	
 		}
 		
 		ul, ol {
