@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Dashboard extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,28 +19,23 @@ class Welcome extends CI_Controller {
 	 */
 	
 	
-
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
 	
 	}
 	
 	
-	public function index()
-	{
+	public function index() {
 		if($this->session->userdata('user_type') == 1) {
-			$this->welcome_page();
+			$this->dashboard_page();
 		} else {
 			redirect('login');
 		}
-	
-	
 	}
 	
 	
-	function welcome_page() {
+	function dashboard_page() {
 		
 		$this->auth->check_session();
 		
@@ -206,6 +201,3 @@ class Welcome extends CI_Controller {
 	}
 
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
