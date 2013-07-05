@@ -23,7 +23,7 @@
 			<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">User Preferences</h1>
 		<div id "body">
 			<div align="center">
-		<?php echo form_open_multipart('welcome/update_user_preferences');?>
+		<?php echo form_open_multipart('dashboard/update_user_preferences');?>
 
 			<table>
 			<tr>

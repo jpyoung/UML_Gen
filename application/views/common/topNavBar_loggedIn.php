@@ -8,7 +8,7 @@
 
 	<p style="position:absolute; left: 47px; top: 1px;">Username: <?php echo $this->session->userdata('username'); ?></p>
 	<map name="Map">
-      <area shape="rect" coords="10,4,41,35" href="<?php echo base_url();?>index.php/welcome/goto_user_profile_view" alt="user profile link">
+      <area shape="rect" coords="10,4,41,35" href="<?php echo base_url();?>index.php/dashboard/goto_user_profile_view" alt="user profile link">
       <area shape="rect" coords="210,5,240,36" href="<?php echo base_url(); ?>" alt="logout button">
     </map>	
 </div>

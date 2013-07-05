@@ -72,7 +72,7 @@
 			  <?php foreach($user_info as $row): ?>
 				<tr>
 					<td><?php echo $row->u_id; ?></td>
-					<td><?php echo anchor('welcome/goto_detailed_user_view/' . $row->u_id , $row->u_username)?></td>
+					<td><?php echo anchor('dashboard/goto_detailed_user_view/' . $row->u_id , $row->u_username)?></td>
 					<td><?php echo $row->u_name; ?></td>
 					<td><?php echo $row->u_address; ?></td>
 					<td><?php echo $row->u_city; ?></td>
@@ -85,8 +85,7 @@
 			</tbody>
 		</table>
 		
-<!-- link that takes the user back to the welcome_message view page -->
-<p><?php echo anchor('welcome', 'Return to the Home Page.'); ?></p>
+
 
 	</div>
 

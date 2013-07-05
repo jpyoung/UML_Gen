@@ -18,7 +18,7 @@
 
 
 <!-- <form id="form1" name="form1" method="post" action=""> -->
-  <?php echo form_open_multipart('welcome/insert_new_user');?>
+  <?php echo form_open_multipart('dashboard/insert_new_user');?>
 <table>
   <th><h1>Create a user</h1></th>
 

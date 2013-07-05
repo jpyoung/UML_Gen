@@ -133,7 +133,7 @@
 		
 		<br/>
 <!-- link that takes the user back to the welcome_message view page -->
-<p><?php echo anchor('welcome/goto_user_management_page', 'Return to the Home Page.'); ?></p>
+<p><?php echo anchor('dashboard/goto_user_management_page', 'Return to the Home Page.'); ?></p>
 
 	</div>
 

@@ -43,7 +43,7 @@ class Login extends CI_Controller {
 	
 				$this->session->set_userdata($us_data);
 				//$id=1;
-				redirect('welcome');
+				redirect('dashboard');
 			} else {
 				//echo "<h1>Could not find any matching username or password.</h1>";
 				$data = '';
