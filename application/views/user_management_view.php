@@ -41,7 +41,7 @@
 
 	<div id="body">
 	
-		<form method="post" action="<?php echo base_url();?>index.php/welcome/create_new_user" >
+		<form method="post" action="<?php echo base_url();?>index.php/dashboard/create_new_user" >
 			<button href="#" class="button">Create New User</button>       
 		</form>
 		
