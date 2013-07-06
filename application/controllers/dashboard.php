@@ -235,10 +235,7 @@ class Dashboard extends CI_Controller {
 	
 	//used to save the profile user information on the user profile view page
 	function save_profile_user_info() {
-		// echo "Called save profile function";
-		// 			var tempString = 'name=' + profName + "&email=" + profEmail + "&address=" + profAddress;
-		// 			tempString += "&city=" + profCity + "&state=" + profState + "&zip=" + profZip;
-		// 		
+		
 		$user_id = $this->session->userdata('user_id');
 		$user_info_submitted = array(
 			'u_name' => $_POST['name'], 
@@ -248,8 +245,6 @@ class Dashboard extends CI_Controller {
 			'u_state' => $_POST['state'],
 			'u_zip' => $_POST['zip']
 		);
-		
-		//print_r($user_info_submitted);
 		
 		//using the user management model to update the table
 		$this->load->model('user_management_model');
