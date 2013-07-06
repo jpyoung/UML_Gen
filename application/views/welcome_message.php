@@ -33,7 +33,7 @@
 		<p style="position:absolute; left: 47px; top: 1px;">Username: <?php echo $this->session->userdata('username'); ?></p>
 		<map name="Map">
 	      <area shape="rect" coords="10,4,41,35" href="#" alt="user profile link">
-	      <area shape="rect" coords="210,5,240,36" href="http://localhost/~youngbuck14188/UML_Gen/" alt="logout button">
+	      <area shape="rect" coords="210,5,240,36" href="<?php echo base_url(); ?>" alt="logout button">
 	    </map>
 	
 		
