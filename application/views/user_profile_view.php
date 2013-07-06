@@ -22,6 +22,9 @@
 			//hiding the msg boxes in the profile change password section
 			$("div#profile-pass-good").hide();
 			$("div#profile-pass-error").hide();
+			//hiding the msg boxes in the profile your information section
+			$("div#profile-pass-good2").hide();
+			$("div#profile-pass-error2").hide();
 
 			//hiding all the positions when the page loads. 
 			$("div.toggler").hide();
@@ -105,7 +108,16 @@
 						dataType: 'text',
 			            success : function(data){                
 			            	console.log("successfully ajax call : " + data);
-							
+							if (data == "true") {
+								//console.log("True");
+								clear_change_password_fields();
+								$("div#profile-pass-good2").show();
+								$('div#profile-pass-good2').delay(2000).fadeOut('slow');
+							} else {
+								console.log("False");
+								$("div#profile-pass-error2").show();
+								$('div#profile-pass-error2').delay(5000).fadeOut('slow');
+							}
 			
 						               
 						},
@@ -462,7 +474,13 @@
 								</td>
 							</tr>
 						</table>
-						<button class="button" id="profileSaveChangesBTN">Save Changes</button>
+						<button style="margin-top: 9px;" class="button" id="profileSaveChangesBTN">Save Changes</button>
+						<div id="profile-pass-good2" class="msg msg-good" style="float:right;margin:9px 30px 0 0; width:150px;">
+		                  <p id="profmsgmsg" style="font-size: 12px;">Change Completed</p>
+		                </div>
+						<div id="profile-pass-error2" class="msg msg-error" style="float:right;margin:9px 30px 0 0; width:150px;">
+		                  <p id="profmsgmsg" style="font-size: 12px;">Error</p>
+		                </div>
 				</fieldset>
 			<!-- </form> -->
 
