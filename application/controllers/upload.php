@@ -12,8 +12,10 @@ class Upload extends CI_Controller {
 	}
 
 	function do_upload() {
+
+		error_reporting(0);
 		$config['upload_path'] = './uploaded_files/';
-		$config['allowed_types'] = '*';
+		$config['allowed_types'] = 'text|txt|rtf|docx|doc';
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
 		$config['max_height']  = '768';
@@ -33,6 +35,8 @@ class Upload extends CI_Controller {
 			$this->insert_file_into_db($this->upload->data());
 			
 			$this->load->view('upload_result_view', $data);
+
+			// Call our method here to start the parsing and echo the results to to the screen.
 		}
 	}
 	
