@@ -28,6 +28,16 @@
 				<span class="label label-info">1</span>
 			</a>
 		</li>
+		
+		<li>
+			<a href="<?php echo base_url(); ?>index.php/dashboard/goto_uml_diagrams" class="light">
+				<div class="ico" style="background-color: white;">
+					<img class="left_bar_image"width="15px" height="15px" src="<?php echo base_url(); ?>assets/img/glyphicons/png/glyphicons_029_notes_2.png">
+				</div>
+				UML Diagrams
+				<span class="label label-info">1</span>
+			</a>
+		</li>
 
 	</ul>
 </div>  <!-- end div navi -->
