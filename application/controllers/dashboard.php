@@ -158,6 +158,12 @@ class Dashboard extends CI_Controller {
 		$this->load->view('user_profile_view', $data);
 	}
 	
+	//used to go the the uml diagrams page
+	function goto_uml_diagrams() {
+		
+		
+	}
+	
 	
 	//function is used to get user by the passed in id
 	//and return the resulting query

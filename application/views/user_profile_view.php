@@ -478,7 +478,7 @@
 		                  <p id="profmsgmsg" style="font-size: 12px;">Change Completed</p>
 		                </div>
 						<div id="profile-pass-error2" class="msg msg-error" style="float:right;margin:9px 30px 0 0; width:150px;">
-		                  <p id="profmsgmsg" style="font-size: 12px;">Error</p>
+		                  <p id="profmsgmsgmsg" style="font-size: 12px;">Error</p>
 		                </div>
 				</fieldset>
 			<!-- </form> -->
