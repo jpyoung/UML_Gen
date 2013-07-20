@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'greatness';
+$db['default']['password'] = '';
 $db['default']['database'] = 'UML_Gen';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

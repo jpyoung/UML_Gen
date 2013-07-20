@@ -160,8 +160,7 @@ class Dashboard extends CI_Controller {
 	
 	//used to go the the uml diagrams page
 	function goto_uml_diagrams() {
-		
-		
+		$this->load->view('uml_diagram_view');
 	}
 	
 	
