@@ -54,6 +54,8 @@ class Login extends CI_Controller {
 	}
 	
 	function forgot_password() {
+		$data['forgot_error_message'] = "";
+		$data['is_error'] = false;
 		$data['return_result'] = null;
 		$this->load->view('forgot_password_view', $data);
 	}
@@ -61,9 +63,24 @@ class Login extends CI_Controller {
 	function lookup_password() {
 		$entered_text = $_POST['forgot_entertext'];
 		
+		$data['return_result'] = null;
+		
 		if ($entered_text != null)
 		{
 			$data['return_result'] = $this->email_exists($entered_text);
+			if ($data['return_result']) {
+				$data['forgot_error_message'] = "";
+				$data['is_error'] = false;
+			} else {
+			//echo "Did not find matching results.";
+				$data['forgot_error_message'] = "Error: did not find matching record.";
+				$data['is_error'] = true;
+			}
+		}
+		else
+		{
+			$data['forgot_error_message'] = "Error: field cannot be empty.";
+			$data['is_error'] = true;
 		}
 		
 		

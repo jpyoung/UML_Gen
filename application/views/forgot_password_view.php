@@ -45,12 +45,29 @@
 		Username or email: <input id="login" class="txt" type="text" name="forgot_entertext"><br/><br/>
 		
 		<?php
+		$logged_in = 0;
+		
+		
+		
+		
 		if ($return_result != null)
 		{
-			echo "The password is: " .  $return_result->u_password;
-		}
-		?>
+			// if ($return_result) {
+				$stringbb = $return_result->u_password;
 		
+				echo "<strong>The password is: " .  $stringbb . "</strong><br /><br />";
+		} 
+		
+
+		
+		if ($is_error == true) {
+			echo "<p>" . $forgot_error_message . "</p>";
+		}
+		
+		
+		
+		
+		?>
 		
 		<input class="button" type="submit" value="Lookup"><br /><br />
 	</form>
