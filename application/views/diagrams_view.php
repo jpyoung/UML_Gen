@@ -48,7 +48,8 @@
 						echo "<p style='padding-left: 45px;'><b>Upload Directory Path:</b> " . $path . "</p>";
 					?>
 
-					<table id="newspaper-b">
+					<!-- <table id="newspaper-b"> -->
+						<table border="1">
 					    <thead>
 						<tr>
 							<th>File ID</th>
@@ -61,7 +62,7 @@
 						</thead>
 						    <tfoot>
 					    	<tr>
-					        	<td colspan="5"><em>File Count: <?php echo count($files_info); ?></em></td>
+					        	<td colspan="6"><em>File Count: <?php echo count($files_info); ?></em></td>
 					        </tr>
 					    </tfoot>
 						<tbody>
@@ -72,6 +73,15 @@
 								<td><?php echo $row->f_name; ?></td>
 								<td><?php echo $row->f_upload_date; ?></td>
 								<td><?php echo $row->f_last_modified; ?></td>
+								<td>
+									<?php echo form_open('dashboard/goto_detailed_diagrams/' . $row->f_id);?>
+								
+									<input style="margin-left: 15px; margin-right: 15px;" type="submit" value="Generate UML <?php echo $row->f_id; ?>">
+									
+									</form>
+									
+									<!-- <img src="<?php echo base_url(); ?>assets/img/glyphicons/png/glyphicons_086_display.png"> -->
+								</td>
 							</tr>
 						  	<?php endforeach; ?>
 						</tbody>
