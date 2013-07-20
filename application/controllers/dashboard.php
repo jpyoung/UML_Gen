@@ -160,8 +160,46 @@ class Dashboard extends CI_Controller {
 	
 	//used to go the the uml diagrams page
 	function goto_uml_diagrams() {
+<<<<<<< HEAD
 		$this->load->view('uml_diagram_view');
+=======
+		$this->auth->check_session();
+		
+		//gathering the user preferences
+		$temp_pref = $this->retrieve_user_preferences();
+		
+		//Setting the colors that were retrieved
+		$data['background_color'] = $temp_pref['background_color'];
+		$data['panel_background_color'] = $temp_pref['panel_background_color'];
+		$data['container_header_color'] = $temp_pref['container_header_color'];
+		
+		//getting all the users information
+		$data['user_info'] = $this->get_all_users();
+		
+		//getting all the file information 
+		$data['files_info'] = $this->get_all_files();
+		$this->load->view('diagrams_view', $data);
+		
 	}
+	
+	
+	//The user clicked the generate uml button in the actions column
+	function goto_detailed_diagrams($select_file_id) {
+		
+		if ($select_file_id != null) {
+			$data['select_file_id'] = $select_file_id;
+		} else {
+			//generate_uml_button
+			$data['select_file_id'] = "Nothing";
+		}
+		
+	
+		
+		$this->load->view('detailed_diagrams_view', $data);
+		
+>>>>>>> Update
+	}
+
 	
 	
 	//function is used to get user by the passed in id
