@@ -179,6 +179,8 @@ class Dashboard extends CI_Controller {
 		
 	}
 	
+	
+	//The user clicked the generate uml button in the actions column
 	function goto_detailed_diagrams($select_file_id) {
 		
 		if ($select_file_id != null) {
@@ -188,8 +190,7 @@ class Dashboard extends CI_Controller {
 			$data['select_file_id'] = "Nothing";
 		}
 		
-		
-	//	$data['select_file_id'] = $selected_file_id;
+	
 		
 		$this->load->view('detailed_diagrams_view', $data);
 		
