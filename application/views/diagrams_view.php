@@ -12,8 +12,8 @@
 
 	<link href="<?php echo base_url(); ?>assets/css/sidebarStyle.css" rel='stylesheet' type='text/css'>
 
-	<style>
-	
+<style>
+	/*custom table styling */
 	#content .display, #content .forms {
 	    width: 100%;
 	    border: 1px solid rgb(221, 221, 221);
@@ -23,29 +23,29 @@
 	    border-radius: 5px 5px 5px 5px;
 	}
 	
- thead tr th {
-	    font-size: 15px;
-	    text-shadow: 1px 1px 0px rgb(255, 255, 255);
-	    line-height: 53px;
-	    height: 53px;
-	    padding: 0px 8px;
+	thead tr th {
+		font-size: 15px;
+		text-shadow: 1px 1px 0px rgb(255, 255, 255);
+		line-height: 53px;
+		height: 53px;
+		padding: 0px 8px;
 	}
 	
 	table {
-	border-collapse: separate;
-	border-spacing: 2px;
-	border-color: gray;
+		border-collapse: separate;
+		border-spacing: 2px;
+		border-color: gray;
 	}
 
-	
-	
 	tr td {
-		background-image:url(<?php echo base_url(); ?>assets/img/table/td-bg.png);background-repeat:repeat-x;background-position:left top;text-shadow:#fff -1px 1px 0;padding:8px
-		}
+		background-image:url(<?php echo base_url(); ?>assets/img/table/td-bg.png);
+		background-repeat:repeat-x;
+		background-position:left top;
+		text-shadow:#fff -1px 1px 0;
+		padding:8px;
+	}
 		
-		
-		
-	</style>
+</style>
 
 
 </head>
@@ -86,7 +86,7 @@
 
 					<!-- <table id="newspaper-b"> -->
 						<!-- <table > -->
-							<table class="display" cellspacing="0" cellpadding="0">
+					<table class="display" cellspacing="0" cellpadding="0">
 					    <thead>
 						<tr>
 							<th>File ID</th>
