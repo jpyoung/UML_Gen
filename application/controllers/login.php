@@ -53,6 +53,37 @@ class Login extends CI_Controller {
 		}
 	}
 	
+	function forgot_password() {
+		$data['return_result'] = null;
+		$this->load->view('forgot_password_view', $data);
+	}
+	
+	function lookup_password() {
+		$entered_text = $_POST['forgot_entertext'];
+		
+		if ($entered_text != null)
+		{
+			$data['return_result'] = $this->email_exists($entered_text);
+		}
+		
+		
+		
+		$this->load->view('forgot_password_view', $data);
+		
+		
+	}
+	
+	function email_exists($submitted_email)
+   {
+          
+           $query = $this->db->query("select * from user where u_username = '" . $submitted_email . "' or u_email = '" . $submitted_email . "'");
+           if ($query->num_rows) {
+                   return $query->row();
+           }
+           return false;
+   }
+	
+	
 
 }
 ?>
