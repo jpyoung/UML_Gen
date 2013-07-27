@@ -1,13 +1,17 @@
 <div class="topbar">
 	<div class="container-fluid">
 		
-		<?php if ($title != 'Login') { ?>
+		<?php if ($title != 'Login' && $title != 'Forgot Password') { ?>
 			<a href="<?php echo base_url();?>index.php/dashboard/" class='company'>UML_Gen</a>
 		<?php } else { ?>
-			<a href="#" class='company'>UML_Gen</a>	
+			<?php if ($title == 'Forgot Password') { ?>
+				<a href="<?php echo base_url();?>" class='company'>UML_Gen</a>	
+			<?php } else { ?>
+				<a href="#" class='company'>UML_Gen</a>	
+			<?php } ?>
 		<?php } ?>
 
-		<?php if ($title != 'Login') { ?>
+		<?php if ($title != 'Login' && $title != 'Forgot Password') { ?>
 		<ul class='mini'>
 			<li>
 				<a href="<?php echo base_url();?>index.php/dashboard/goto_user_profile_view">
@@ -26,7 +30,7 @@
 		
 	</div>
 </div>
-<?php if ($title != 'Login') { ?>
+<?php if ($title != 'Login' && $title != 'Forgot Password') { ?>
 <div class="breadcrumbs">
 	<div class="container-fluid">
 		<ul class="bread pull-left">

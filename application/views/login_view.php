@@ -36,7 +36,7 @@
 					</div>  <!-- end div control-group -->
 					<div class="submit">
 								<?=anchor('login/forgot_password/', 'Forgot password?');?>
-								<button type="submit" value="Submit" style="float:right;" class="btn btn-red5">Login</button>
+								<button type="submit" value="Submit" style="float:right;" class="btn btn-blue5">Login</button>
 					</div>
 					
 					</form>
@@ -45,9 +45,6 @@
 		</div>  <!-- end box div -->
 	</div>  <!-- end span div -->
 </div>  <!-- end row-fluid div -->
-
-
-
 
 
 <!-- start: footer section -->

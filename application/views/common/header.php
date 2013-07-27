@@ -33,7 +33,7 @@ $(document).ready(function() {
 	<?php include('topbar.php'); ?>
 <!-- end top navigation bar -->
 
-<?php if ($title != 'Login') { ?>
+<?php if ($title != 'Login' && $title != 'Forgot Password') { ?>
 <!-- Main side by nav -->
 	<?php include('sidebar.php'); ?>
 <!-- end of side bar -->
