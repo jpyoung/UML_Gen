@@ -1,3 +1,5 @@
+</div>
+</div>
 </div>  <!-- end content div -->
 
 <!-- Uncaught TypeError: Object [object Object] has no method 'dataTable' -->

@@ -50,20 +50,16 @@
 					</table>
 					
 					<br/>
+					<div class="box-content">
 					<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-					
+					</div>  <!-- end div box-content -->
 			</div>  <!-- end div box-content box-nomargin -->
 		</div>  <!-- end div box -->
 	</div>  <!-- end div row-fluid -->
 				
 
 
-				
-
-
-</div>
-</div>
-
+			
 <!-- start: footer section -->
 	<?php include('common/footer.php'); ?>
 <!-- end: footer section -->

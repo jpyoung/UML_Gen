@@ -19,9 +19,6 @@
 	</div>  <!-- end span div -->
 </div>  <!-- end row-fluid div -->
 
-</div>
-</div>
-
 
 <!-- start: footer section -->
 	<?php include('common/footer.php'); ?>

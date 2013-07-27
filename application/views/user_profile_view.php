@@ -477,8 +477,7 @@
 </div>  <!-- end div belowNavWrapper -->
 
 
-</div>
-</div>
+
 
 
 <!-- start: footer section -->
