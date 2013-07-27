@@ -13,6 +13,17 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/style.css">
 <script src="<?php echo base_url(); ?>/theme/js/jquery.js"></script>
 
+<script>
+
+$(document).ready(function() {
+	
+	//on document load, set the body background to retina-wood.
+	$('body').removeClass().addClass("retina-wood");
+
+});
+
+
+</script>
 
 </head>
 <body>
