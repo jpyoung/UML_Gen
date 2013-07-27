@@ -126,3 +126,13 @@ input.txt, textarea {
 		
 	margin: 40px;
 }
+
+
+
+/*style for the UML_Gen logo and link in the upper left and corner of the site*/
+h3 > a { 
+	text-decoration: none; 
+	color: white;
+	font-size: 21px;
+	font-weight: bold;
+}

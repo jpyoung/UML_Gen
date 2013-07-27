@@ -73,13 +73,13 @@ class Login extends CI_Controller {
 				$data['is_error'] = false;
 			} else {
 			//echo "Did not find matching results.";
-				$data['forgot_error_message'] = "Error: did not find matching record.";
+				$data['forgot_error_message'] = "<strong>Error:</strong> did not find matching record.";
 				$data['is_error'] = true;
 			}
 		}
 		else
 		{
-			$data['forgot_error_message'] = "Error: field cannot be empty.";
+			$data['forgot_error_message'] = "<strong>Error:</strong> field cannot be empty.";
 			$data['is_error'] = true;
 		}
 		

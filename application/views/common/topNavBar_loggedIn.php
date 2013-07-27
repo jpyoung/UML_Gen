@@ -1,5 +1,5 @@
 <div style="margin-left: 30px; width: 300px;">
-	<h3 style="color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
+	<h3 style="color: white; font-size: 21px; font-weight: bold;"><a style="color: white;" href="<?php echo base_url();?>index.php/dashboard/">UML_Gen</a></h3>
 </div>
 
 <div style="position:absolute; top: 16px; right: 40px;">

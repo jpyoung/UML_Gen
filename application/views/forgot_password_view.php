@@ -19,14 +19,25 @@
 		-webkit-box-shadow: 0 0 8px #D0D0D0;
 	}
 	
+	/*style for the UML_Gen logo and link in the upper left and corner of the site*/
+	h3 > a { 
+		text-decoration: none; 
+		color: white;
+		font-size: 21px;
+		font-weight: bold;
+	}
+	
 	</style>
 	
 </head>
 <body>
 
 	<div class="main-nav">
-		<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">UML_Gen</h3>
+		<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">
+			<a href="<?php echo base_url();?>index.php/login/">UML_Gen</a>
+		</h3>
 	</div>
+
 
 <div id="outerWrapper">
 
