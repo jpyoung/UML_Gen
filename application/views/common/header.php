@@ -22,9 +22,10 @@
 	<?php include('topbar.php'); ?>
 <!-- end top navigation bar -->
 
-
+<?php if ($title != 'Login') { ?>
 <!-- Main side by nav -->
 	<?php include('sidebar.php'); ?>
 <!-- end of side bar -->
+<?php } ?>
 
 <div class="content">

@@ -17,6 +17,7 @@ class Login extends CI_Controller {
 		$data = $this->config_website_theme->get_settings();
 		$data['warn'] = $warn;
 		$data['message'] = $message;
+		$data['title'] = "Login";
 		$this->load->view('login_view', $data);
 	}
 	
