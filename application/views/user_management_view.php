@@ -1,23 +1,13 @@
 <!-- start: header section -->
 <?php include('common/header.php'); ?>	
 <!-- end: header section	 -->
-	
-	<div class="row-fluid">
-		<div class="span9">
-			<div class="box">
-				<div class="box-head">
-					<h3>Mini Gallery</h3>
-				</div>
-				<p>Sample box inside</p>
-			</div>  <!-- end box div -->
-		</div>  <!-- end span div -->
-	</div>  <!-- end row-fluid div -->
-	
-	
+
+
+		
 	<div class="row-fluid">
 			<div class="box">
 				<div class="box-head tabs">
-					<h3>dataTable only sortable</h3>
+					<h3>User Management</h3>
 				</div>
 				<div class="box-content box-nomargin">
 					<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
@@ -62,7 +52,7 @@
 
 </div>
 </div>
-	<script src="<?php echo base_url(); ?>/theme/js/jquery.js"></script>
+	<!-- <script src="<?php echo base_url(); ?>/theme/js/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>/theme/js/less.js"></script>
 	<script src="<?php echo base_url(); ?>/theme/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>/theme/js/jquery.uniform.min.js"></script>
@@ -83,7 +73,7 @@
 	<script src="<?php echo base_url(); ?>/theme/js/jquery.cookie.js"></script>
 	<script src="<?php echo base_url(); ?>/theme/js/tableTools/js/TableTools.min.js"></script>
 	<script src="<?php echo base_url(); ?>/theme/js/custom.js"></script>
-	<script src="<?php echo base_url(); ?>/theme/js/demo.js"></script>	
+	<script src="<?php echo base_url(); ?>/theme/js/demo.js"></script> -->	
 	
 <!-- start: footer section -->
 	<?php include('common/footer.php'); ?>

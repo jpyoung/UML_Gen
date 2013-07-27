@@ -52,6 +52,8 @@ class Dashboard extends CI_Controller {
 
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
+		
+		$data['title'] = "Dashboard";
 
 		// $this->load->view('welcome_message', $data);
 		$this->load->view('dashboard_view', $data);
@@ -123,7 +125,7 @@ class Dashboard extends CI_Controller {
 
 	//this is used to go to the user management view page. 
 	function goto_user_management_page() {
-
+		$data['title'] = "User Management";
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_management_view', $data);
 	}
@@ -147,7 +149,17 @@ class Dashboard extends CI_Controller {
 
 		$this->load->view('detailed_user_view', $data);
 	}
-
+	
+	//takes the user to the uploader view
+	function goto_uploader_view() {
+		
+		//getting all the file information 
+		$data['files_info'] = $this->get_all_files();
+		
+			$data['title'] = "Uploader";
+			$data['user_info'] = $this->get_all_users();
+			$this->load->view('uploader_view', $data);
+	}
 
 	//used to go to the user_profile view
 	function goto_user_profile_view() {
@@ -175,6 +187,8 @@ class Dashboard extends CI_Controller {
 
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
+		
+		$data['title'] = "UML Diagrams";
 		
 		$this->load->view('diagrams_view', $data);
 		//$this->load->view('uml_diagram_view', $data);
