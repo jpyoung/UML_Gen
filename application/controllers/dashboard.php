@@ -166,6 +166,8 @@ class Dashboard extends CI_Controller {
 
 		//gathering the user information from the DB. 
 		$data['user_info'] = $this->get_user_by_id($this->session->userdata('user_id'));
+		
+		$data['title'] = "User Profile";
 
 		$this->load->view('user_profile_view', $data);
 	}

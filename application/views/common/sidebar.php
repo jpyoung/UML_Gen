@@ -18,8 +18,8 @@
 	<div class="container-fluid">
 	<div id="side_navi" class="navi">
 		<ul class='main-nav'>
-			<!-- <li class='active'> -->
-			<li>
+			<li class='active'>
+			<!-- <li> -->
 				<a href="<?php echo base_url(); ?>index.php/dashboard" class='light'>
 					<div class="ico"><i class="icon-home icon-white"></i></div>
 					Dashboard
