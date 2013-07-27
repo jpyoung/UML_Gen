@@ -31,6 +31,5 @@
 				</a>
 			</li>
 		</ul>
-
-	</div>
-</div>
+	</div>  <!-- end div container-fluid -->
+</div>  <!-- end div breadcrumbs -->

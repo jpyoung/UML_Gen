@@ -10,26 +10,28 @@
 				</a>
 			</li>
 			<li>
-				<a href="forms.html" class='light'>
+				<a href="<?php echo base_url(); ?>index.php/dashboard/goto_user_preferences" class='light'>
 					<div class="ico"><i class="icon-list icon-white"></i></div>
 					User Management
 					<span class="label label-info">1</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" class='light toggle-collapsed'>
-					<div class="ico"><i class="icon-th-large icon-white"></i></div>
+				<a href="<?php echo base_url(); ?>index.php/dashboard/goto_user_preferences" class='light'>
+					<div class="ico"><i class="icon-tag icon-white"></i></div>
 					User Preferences
-					<img src="<?php echo base_url(); ?>/theme/img/toggle-subnav-down.png" alt="">
+					<span class="label label-info">1</span>
 				</a>
 			</li>
+			
 			<li>
-				<a href="#" class='light toggle-collapsed'>
+				<a href="<?php echo base_url(); ?>index.php/dashboard/goto_user_preferences" class='light'>
 					<div class="ico"><i class="icon-th-large icon-white"></i></div>
 					UML Diagrams
-					<img src="<?php echo base_url(); ?>/theme/img/toggle-subnav-down.png" alt="">
+					<span class="label label-info">1</span>
 				</a>
-			</li>		
+			</li>
+		
 
 		</ul>
 </div>  

@@ -23,11 +23,11 @@
 					<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
 						<thead>
 							<tr>
-								<th>Rendering engine</th>
-								<th>Browser</th>
-								<th>Platform(s)</th>
-								<th>Engine version</th>
-								<th>CSS grade</th>
+								<th>File ID</th>
+								<th>User ID</th>
+								<th>File Name</th>
+								<th>Upload Date</th>
+								<th>Last Modified</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,34 +70,7 @@
 								<td>7</td>
 								<td>A</td>
 							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>AOL browser (AOL desktop)</td>
-								<td>Win XP</td>
-								<td>6</td>
-								<td>A</td>
-							</tr>
-							<tr>
-								<td>Gecko</td>
-								<td>Firefox 1.0</td>
-								<td>Win 98+ / OSX.2+</td>
-								<td>1.7</td>
-								<td>A</td>
-							</tr>
-							<tr>
-								<td>Misc</td>
-								<td>PSP browser</td>
-								<td>PSP</td>
-								<td>-</td>
-								<td>C</td>
-							</tr>
-							<tr>
-								<td>Other browsers</td>
-								<td>All others</td>
-								<td>-</td>
-								<td>-</td>
-								<td>U</td>
-							</tr>
+						
 						</tbody>
 					</table>
 				
