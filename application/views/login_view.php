@@ -6,7 +6,7 @@
 	<div class="span5 offset3">
 		<div class="box">
 			<div class="box-head">
-				<h3>User's Information'</h3>
+				<h3>Login</h3>
 			</div>
 			<div class="box-content">
 				

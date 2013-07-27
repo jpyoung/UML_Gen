@@ -133,6 +133,7 @@ class Dashboard extends CI_Controller {
 
 	//used to go to the user preferences view page.
 	function goto_user_preferences() {
+		$data['title'] = "User Preferences";
 		$data['user_info'] = $this->get_all_users();
 		$this->load->view('user_preferences_view', $data);
 	}
