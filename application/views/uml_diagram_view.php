@@ -1,31 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Neat Admin Template 2</title>
-<meta name="description" content="">
-
-<meta name="viewport" content="width=device-width">
-
-<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/bootstrap.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/jquery.fancybox.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/style.css">
-</head>
-<body>
-
-
-<!-- top navigation bar -->
-	<?php include('common/topbar.php'); ?>
-<!-- end top navigation bar -->
-
-
-<!-- Main side by nav -->
-	<?php include('common/sidebar.php'); ?>
-<!-- end of side bar -->
-
-<div class="content">
-	
+<!-- start: header section -->
+<?php include('common/header.php'); ?>	
+<!-- end: header section	 -->
 	
 	<div class="row-fluid">
 		<div class="span9">
@@ -39,19 +14,97 @@
 	</div>  <!-- end row-fluid div -->
 	
 	
-</div>  <!-- end content div -->
-
-		
-<script src="<?php echo base_url(); ?>/theme/js/jquery.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/less.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.peity.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.fancybox.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.flot.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.color.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.flot.resize.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.cookie.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/jquery.cookie.js"></script>
-<script src="<?php echo base_url(); ?>/theme/js/custom.js"></script><script src="js/demo.js"></script>
-</body>
-</html>
+	<div class="row-fluid">
+			<div class="box">
+				<div class="box-head tabs">
+					<h3>dataTable only sortable</h3>
+				</div>
+				<div class="box-content box-nomargin">
+					<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
+						<thead>
+							<tr>
+								<th>Rendering engine</th>
+								<th>Browser</th>
+								<th>Platform(s)</th>
+								<th>Engine version</th>
+								<th>CSS grade</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Trident</td>
+								<td>Internet
+									 Explorer 4.0</td>
+								<td>Win 95+</td>
+								<td>4</td>
+								<td>X</td>
+							</tr>
+							<tr>
+								<td>Trident</td>
+								<td>Internet
+									 Explorer 5.0</td>
+								<td>Win 95+</td>
+								<td>5</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Trident</td>
+								<td>Internet
+									 Explorer 5.5</td>
+								<td>Win 95+</td>
+								<td>5.5</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Trident</td>
+								<td>Internet
+									 Explorer 6</td>
+								<td>Win 98+</td>
+								<td>6</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Trident</td>
+								<td>Internet Explorer 7</td>
+								<td>Win XP SP2+</td>
+								<td>7</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Trident</td>
+								<td>AOL browser (AOL desktop)</td>
+								<td>Win XP</td>
+								<td>6</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Gecko</td>
+								<td>Firefox 1.0</td>
+								<td>Win 98+ / OSX.2+</td>
+								<td>1.7</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Misc</td>
+								<td>PSP browser</td>
+								<td>PSP</td>
+								<td>-</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Other browsers</td>
+								<td>All others</td>
+								<td>-</td>
+								<td>-</td>
+								<td>U</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+	</div>	
+	
+	
+<!-- start: footer section -->
+	<?php include('common/footer.php'); ?>
+<!-- end: footer section -->
