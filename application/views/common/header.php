@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/bootstrap-responsive.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/jquery.fancybox.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/style.css">
+
+
+
 </head>
 <body>
 
