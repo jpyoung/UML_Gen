@@ -1,74 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+<title>Neat Admin Template 2</title>
+<meta name="description" content="">
 
-	
-	<meta charset="utf-8">
-	<title>Dashboard View</title>
+<meta name="viewport" content="width=device-width">
 
-	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
-
-	<link href="<?php echo base_url(); ?>assets/css/main_page_layout.css" rel='stylesheet' type='text/css'>
-
-	<link href="<?php echo base_url(); ?>assets/css/sidebarStyle.css" rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/bootstrap.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/jquery.fancybox.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>/theme/css/style.css">
 </head>
 <body>
 
-	<div class="main-nav">
-		<!-- loading the partial topNavBar_loggedIn view -->
-		<?php include('common/topNavBar_loggedIn.php'); ?>
-	</div>  <!-- end div main-nav -->
+
+<!-- top navigation bar -->
+	<?php include('common/topbar.php'); ?>
+<!-- end top navigation bar -->
 
 
-<div id="belowNavWrapper">
-	<div id="wrapper">
+<!-- Main side by nav -->
+	<?php include('common/sidebar.php'); ?>
+<!-- end of side bar -->
+
+<div class="content">
+	
+	
+	<div class="row-fluid">
+		<div class="span9">
+			<div class="box">
+				<div class="box-head">
+					<h3>Mini Gallery</h3>
+				</div>
+				<p>Sample box inside</p>
+			</div>  <!-- end box div -->
+		</div>  <!-- end span div -->
+	</div>  <!-- end row-fluid div -->
+	
+	
+</div>  <!-- end content div -->
+
 		
-		
-		<div id="sidebar">
-			<div id="side_buffer_top"></div>
-			<!-- loading the partial sidebar_nav view -->
-			<?php include('common/sidebar_nav.php'); ?>
-		</div>  <!-- end div sidebar -->
-		
-		<!-- Main content area -->
-		
-		<div id="content">
-		
-		
-				<div style="width: 630px" id="containerr">
-					<h1 class="containerHeader">UML File Generator</h1>
-
-					<div id="body">
-
-						<p>Hello and welcome to the Java UML parser.</p>
-						<p><strong>Instructions step by step: </strong></p>
-						<p>1. Load your java file as a .txt, or .doc, or .docx file. </p>
-						<p>2. Press upload!</p>
-						<p>3. See your results!</p>
-						<!-- This is the form to upload a file. -->
-
-						<?php echo form_open_multipart('upload/do_upload');?>
-
-							Please choose a file: <input type="file" name="userfile" size="20" />
-								<input type="submit" value="upload" />
-				 		</form>
-						<h3>Paste in your existing Java file.</h3><br />
-						<textarea rows="4" cols="50">
-						Insert your text here...
-						</textarea> <br />
-						<!--  Generate Button -->
-						<input type="submit" value="Generate" /> <br /><hr />
-					</div>  <!-- end div body -->
-
-					<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-				</div>  <!-- end div container -->
-
-		</div> <!-- end div content -->
-	</div>  <!-- end div wrapper -->
-
-</div>  <!-- end div belowNavWrapper -->
-
-
+<script src="<?php echo base_url(); ?>/theme/js/jquery.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/less.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.peity.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.fancybox.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.flot.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.color.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.flot.resize.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.cookie.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/jquery.cookie.js"></script>
+<script src="<?php echo base_url(); ?>/theme/js/custom.js"></script><script src="js/demo.js"></script>
 </body>
 </html>
