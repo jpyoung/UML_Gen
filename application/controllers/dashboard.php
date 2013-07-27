@@ -146,6 +146,8 @@ class Dashboard extends CI_Controller {
 
 		//grabbing the all the files associated with this user id
 		$data['user_files'] = $this->get_files_by_user($id);
+		
+		$data['title'] = "Detail User View";
 
 		$this->load->view('detailed_user_view', $data);
 	}

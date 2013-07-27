@@ -65,7 +65,9 @@
 								  	<?php endforeach; ?>
 							</tbody>
 					</table>
+			<div class="box-content">
 			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+			</div>  <!-- end div box-content -->
 		</div>  <!-- end box div -->
 	</div>  <!-- end span div -->
 </div>  <!-- end row-fluid div -->
