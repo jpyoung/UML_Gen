@@ -175,8 +175,9 @@ class Dashboard extends CI_Controller {
 
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
-		//$this->load->view('diagrams_view', $data);
-		$this->load->view('uml_diagram_view', $data);
+		
+		$this->load->view('diagrams_view', $data);
+		//$this->load->view('uml_diagram_view', $data);
 	}
 
 
