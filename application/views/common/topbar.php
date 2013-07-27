@@ -5,13 +5,13 @@
 		<ul class='mini'>
 
 			<li>
-				<a href="#">
+				<a href="<?php echo base_url();?>index.php/dashboard/goto_user_profile_view">
 					<img src="<?php echo base_url(); ?>/theme/img/icons/fugue/gear.png" alt="">
-					Settings
+					Profile Settings
 				</a>
 			</li>
 			<li>
-				<a href="index.html">
+				<a href="<?php echo base_url(); ?>">
 					<img src="<?php echo base_url(); ?>/theme/img/icons/fugue/control-power.png" alt="">
 					Logout
 				</a>
