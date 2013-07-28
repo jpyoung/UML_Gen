@@ -40,7 +40,7 @@
 	<div class="span9">
 		<div class="box">
 			<div class="box-head">
-				<h3>Uploaded Files</h3>
+				<h3>All Uploaded Files</h3>
 			</div>
 			
 					<table class="table table-striped table-bordered">

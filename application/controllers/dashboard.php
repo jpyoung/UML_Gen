@@ -211,9 +211,9 @@ class Dashboard extends CI_Controller {
 		}
 
 
-
-		$this->load->view('detailed_diagrams_view', $data);
-
+$data['title'] = "Generate Diagram";
+		// $this->load->view('detailed_diagrams_view', $data);
+$this->load->view('gen_diagrams_view', $data);
 	}
 
 
