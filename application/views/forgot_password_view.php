@@ -1,94 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- start: header section -->
+<?php include('common/header.php'); ?>	
+<!-- end: header section	 -->
 
-	<meta charset="utf-8">
-	<title>Forgot Password</title>
+<div class="row-fluid">
+	<div class="span5 offset3">
+		<div class="box">
+			<div class="box-head">
+				<h3>Forgot Password</h3>
+			</div>
+			<div class="box-content">
+				<form action="<?php echo base_url(); ?>index.php/login/lookup_password" method="post" class="form-horizontal">
 
-	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
-	
-	<style>
-	
-	#container {
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-left: 20%;
-		
-		width: 700px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	
-	/*style for the UML_Gen logo and link in the upper left and corner of the site*/
-	h3 > a { 
-		text-decoration: none; 
-		color: white;
-		font-size: 21px;
-		font-weight: bold;
-	}
-	
-	</style>
-	
-</head>
-<body>
+					<div class="control-group">
+						<label for="basic" class="control-label">Username or Email: </label>
+						<div class="controls">
+							<input id="login" class="txt" type="text" name="forgot_entertext">
+						</div>  <!-- end div controls -->
+					</div>  <!-- end div control-group -->
+			
+					<?php
+					$logged_in = 0;
 
-	<div class="main-nav">
-		<h3 style="margin-left: 30px; color: white; font-size: 21px; font-weight: bold;">
-			<a href="<?php echo base_url();?>index.php/login/">UML_Gen</a>
-		</h3>
-	</div>
+					if ($return_result != null)
+					{
+						// if ($return_result) {
+							$stringbb = $return_result->u_password;
+
+							echo "<strong>The password is: " .  $stringbb . "</strong><br /><br />";
+					} 
+
+					if ($is_error == true) {
+						echo "<p>" . $forgot_error_message . "</p>";
+					}
+
+					?>
+					
+					<button type="submit" value="Lookup" style="float:right;" class="btn btn-blue5">Lookup</button>
+					
+				</form>
+			
+				
+			</div>  <!-- end div box-content	 -->
+		</div>  <!-- end box div -->
+	</div>  <!-- end span div -->
+</div>  <!-- end row-fluid div -->
 
 
-<div id="outerWrapper">
+<!-- start: footer section -->
+	<?php include('common/footer.php'); ?>
+<!-- end: footer section -->
 
-<div id="container">
-	<h1 style="background: #0567ad; color: white; font-size: 21px; font-weight: bold;">Login</h1>
 
-	<div id="body">
-		
-	<!-- <form action="http://localhost/xampp/CodeIgniter/index.php/login/login_verification" method="post" style="padding-left: 30%;"> -->
-		
-	<form action="<?php echo base_url(); ?>index.php/login/lookup_password" method="post" style="padding-left: 30%;">
-		
-		
-		
-		
-		Username or email: <input id="login" class="txt" type="text" name="forgot_entertext"><br/><br/>
-		
-		<?php
-		$logged_in = 0;
-		
-		
-		
-		
-		if ($return_result != null)
-		{
-			// if ($return_result) {
-				$stringbb = $return_result->u_password;
-		
-				echo "<strong>The password is: " .  $stringbb . "</strong><br /><br />";
-		} 
-		
 
-		
-		if ($is_error == true) {
-			echo "<p>" . $forgot_error_message . "</p>";
-		}
-		
-		
-		
-		
-		?>
-		
-		<input class="button" type="submit" value="Lookup"><br /><br />
-	</form>
-	
-	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-</div>
 
-</div> <!-- end of outerWrapper div -->
 
-</body>
-</html>

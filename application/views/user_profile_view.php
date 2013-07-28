@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-	<meta charset="utf-8">
-	<title>User Profile View</title>
-
-	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css'>
-
-	<link href="<?php echo base_url(); ?>assets/css/main_page_layout.css" rel='stylesheet' type='text/css'>
-
-	<link href="<?php echo base_url(); ?>assets/css/sidebarStyle.css" rel='stylesheet' type='text/css'>
+<!-- start: header section -->
+<?php include('common/header.php'); ?>	
+<!-- end: header section	 -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	
@@ -305,24 +296,11 @@
 	</style>
 
 
-</head>
-<body>
-	
-	<div class="main-nav">
-		<!-- loading the partial topNavBar_loggedIn view -->
-		<?php include('common/topNavBar_loggedIn.php'); ?>
-	</div>  <!-- end div main-nav -->
 
 
 <div id="belowNavWrapper">
 	<div id="wrapper">
 		
-		
-		<div id="sidebar">
-			<div id="side_buffer_top"></div>
-			<!-- loading the partial sidebar_nav view -->
-			<?php include('common/sidebar_nav.php'); ?>
-		</div>  <!-- end div sidebar -->
 		
 		<!-- Main content area -->
 		
@@ -336,6 +314,8 @@
 		        <div class="profile-overview">
 		            <div class="profile-overview-content">
 		                <h1><?php echo $user_info->u_name; ?></h1>
+						
+						<hr>
 
 		                <table id="profile-table">
 		                    <tr>
@@ -397,7 +377,7 @@
 			<div id="edit-profile-card">
 			<!-- <form> -->
 				<fieldset class="profile">
-					<legend><h3>Change Password</h3></legend>
+					<legend><h4>Change Password</h4></legend>
 						<table id="change_pass">
 							<tr>
 								<td>Current Password</td>
@@ -418,7 +398,7 @@
 								</td>
 							</tr>
 						</table>
-						<button style="margin-top: 9px;" class="button" id="resetPB">Reset Password</button>
+						<button style="margin-bottom: 9px;" class="button" id="resetPB">Reset Password</button>
 						<div id="profile-pass-good" class="msg msg-good" style="float:right;margin:9px 30px 0 0; width:150px;">
 		                  <p id="profmsgmsg" style="font-size: 12px;">Change Completed</p>
 		                </div>
@@ -434,7 +414,7 @@
 
 			<!-- <form> -->
 				<fieldset class="profile">
-					<legend><h3>Your Information</h3></legend>
+					<legend><h4>Your Information</h4></legend>
 						<table id="change_pass">
 							<tr>
 								<td>Name</td>
@@ -473,7 +453,7 @@
 								</td>
 							</tr>
 						</table>
-						<button style="margin-top: 9px;" class="button" id="profileSaveChangesBTN">Save Changes</button>
+						<button style="margin-bottom: 9px;" class="button" id="profileSaveChangesBTN">Save Changes</button>
 						<div id="profile-pass-good2" class="msg msg-good" style="float:right;margin:9px 30px 0 0; width:150px;">
 		                  <p id="profmsgmsg" style="font-size: 12px;">Change Completed</p>
 		                </div>
@@ -497,5 +477,9 @@
 </div>  <!-- end div belowNavWrapper -->
 
 
-</body>
-</html>
+
+
+
+<!-- start: footer section -->
+	<?php include('common/footer.php'); ?>
+<!-- end: footer section -->

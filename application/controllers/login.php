@@ -17,6 +17,7 @@ class Login extends CI_Controller {
 		$data = $this->config_website_theme->get_settings();
 		$data['warn'] = $warn;
 		$data['message'] = $message;
+		$data['title'] = "Login";
 		$this->load->view('login_view', $data);
 	}
 	
@@ -54,6 +55,7 @@ class Login extends CI_Controller {
 	}
 	
 	function forgot_password() {
+		$data['title'] = "Forgot Password";
 		$data['forgot_error_message'] = "";
 		$data['is_error'] = false;
 		$data['return_result'] = null;
@@ -84,7 +86,7 @@ class Login extends CI_Controller {
 		}
 		
 		
-		
+		$data['title'] = "Forgot Password";
 		$this->load->view('forgot_password_view', $data);
 		
 		
