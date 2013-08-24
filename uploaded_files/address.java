@@ -4,7 +4,7 @@ public class Address {
 	
 	public String state;
 	
-	public Person(String first, String last) {
+	public Address(String first, String last) {
 		this.firstName = first;
 		this.lastName = last;
 	}

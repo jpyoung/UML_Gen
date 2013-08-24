@@ -43,7 +43,7 @@
 			<li>
 				<a href="<?php echo base_url(); ?>index.php/dashboard/goto_user_preferences" class='light'>
 					<div class="ico"><i class="icon-tag icon-white"></i></div>
-					User Preferences
+					<span id="userPreferences">User Preferences</span>
 					<span class="label label-info">1</span>
 				</a>
 			</li>

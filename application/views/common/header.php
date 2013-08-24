@@ -60,6 +60,19 @@ $(document).ready(function() {
 	// 	$(this).addClass('active');
 	// 	//return false;
 	// });
+	// 
+	
+	// $("ul.main-nav li").click(function() {
+	// 	var selected_span_id = $(this).find('span').get(0).id;
+	// 	if ( selected_span_id == "userPreferences") {
+	// 		$(".bread").append('<li><a href="dashboard.html">Jack</a></li>');
+	// 	}
+	// 		alert("yolo : " + $(this).find('span').get(0).id);
+	// });
+	
+
+
+
 	
 
 });

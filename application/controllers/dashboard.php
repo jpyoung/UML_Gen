@@ -128,6 +128,9 @@ class Dashboard extends CI_Controller {
 	function goto_user_management_page() {
 		$data['title'] = "User Management";
 		$data['user_info'] = $this->get_all_users();
+		
+		$data['bread_crumb'] = array(array("User Management", "goto_user_management_page"));
+		
 		$this->load->view('user_management_view', $data);
 	}
 
@@ -136,6 +139,9 @@ class Dashboard extends CI_Controller {
 	function goto_user_preferences() {
 		$data['title'] = "User Preferences";
 		$data['user_info'] = $this->get_all_users();
+		
+		$data['bread_crumb'] = array(array("User Preferences", "goto_user_preferences"));
+		
 		$this->load->view('user_preferences_view', $data);
 	}
 
@@ -151,6 +157,8 @@ class Dashboard extends CI_Controller {
 		
 		$this->load->model('stats_tracker_model');
 		$data['account_activity'] = $this->stats_tracker_model->get_stats_tracker_by_userid($id);
+		
+		$data['bread_crumb'] = array(array("User Management", "goto_user_management_page"));
 		
 		$data['title'] = "Detail User View";
 
@@ -197,6 +205,8 @@ class Dashboard extends CI_Controller {
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
 		
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
+		
 		$data['title'] = "UML Diagrams";
 		
 		$this->load->view('diagrams_view', $data);
@@ -223,6 +233,7 @@ class Dashboard extends CI_Controller {
 		$this->uml_algo->mim_Uml_algo($data['file']->f_path);
 	    $data['produced_uml_table'] = $this->uml_algo->generate_uml();
 
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
 	    
 		$data['title'] = "Generate Diagram";
 				// $this->load->view('detailed_diagrams_view', $data);
@@ -261,6 +272,8 @@ class Dashboard extends CI_Controller {
 		// 	    echo $produced_uml_table;
 		
 		//echo $this->config->item('uploaded_url');
+		
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
 		
 		$data['title'] = "Detailed File View";
 				
