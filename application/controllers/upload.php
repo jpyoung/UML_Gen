@@ -48,7 +48,7 @@ class Upload extends CI_Controller {
 			 'f_id'=> null,
 			 'u_id' => $this->session->userdata('user_id'),
 			 'f_name' => $data['file_name'],
-			 'f_path' => $data['file_path'],
+			 'f_path' => $this->config->item('uploaded_url') . $data['file_name'],
 			'f_upload_date' => date("Y-m-d H:i:s"),
 			 'f_last_modified'=> null
 			);

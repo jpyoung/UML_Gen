@@ -257,7 +257,7 @@ class Dashboard extends CI_Controller {
 		// 	    $produced_uml_table = $this->uml_algo->generate_uml();
 		// 	    echo $produced_uml_table;
 		
-	
+		//echo $this->config->item('uploaded_url');
 		
 		$data['title'] = "Detailed File View";
 				
