@@ -10,9 +10,9 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
-require 'javafile.php';
-require 'ParamInterweaver.php';
-//require "lazy_scripting.php";
+// require 'javafile.php';
+// require 'ParamInterweaver.php';
+
 
 class Mapper {
   
@@ -20,9 +20,15 @@ class Mapper {
   var $show_error_checking = false;
   
   var $used_up_indexes;
+
+  private $CI;
   
   //constructor for the Mapper object.  Accepts the parsed file array
-  function __construct($passed_file_array) {
+	function __construct() {
+		$this->CI =& get_instance();
+	}
+	
+  function mim_Mapper($passed_file_array) {
     $this->parsed_base_file = $passed_file_array;
     $this->used_up_indexes = array();
   }
@@ -31,19 +37,20 @@ class Mapper {
     
      $class_name = $this->retrieve_class_name();
     
-     $javaF = new Javafile();
+	 $this->load->model("javafile");
+     $this->javafile->mim_Javafile();
     
      //setting the objects class name
-     $javaF->set_object_name($class_name);
+     $this->javafile->set_object_name($class_name);
 
      //retrieve and set the object class fields
-     $this->retrieve_class_fields($javaF);
+     $this->retrieve_class_fields($this->javafile);
       
      //retrieve and set the object class constructors
-     $this->retrieve_class_constructors($class_name, $javaF);
+     $this->retrieve_class_constructors($class_name, $this->javafile);
      
      //used to retrieve and set the object class methods
-     $this->retrieve_class_methods($javaF);
+     $this->retrieve_class_methods($this->javafile);
      
      
      if ($this->show_error_checking) {
@@ -53,7 +60,7 @@ class Mapper {
        echo "<hr>";
      }
      
-     $completed_javaFile = $this->launch_param_interweaver_parse($javaF);
+     $completed_javaFile = $this->launch_param_interweaver_parse($this->javafile);
      
      //producing the UML table for the parse out and mapped file
      //echo $this->return_as_UML_Table($javaF->return_as_array());

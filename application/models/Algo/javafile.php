@@ -20,9 +20,14 @@ class Javafile {
     var $method_counter = 1;
     var $constructor_counter = 1;
     
+	private $CI;
 
     //constructor for the parser object.  Accepts the file array
-    function __construct() {
+	function __construct() {
+		$this->CI =& get_instance();
+	}
+	
+    function mim_Javafile() {
       $this->object_name = "";
       $this->object_class_constructors = array();
       $this->object_class_fields = array();

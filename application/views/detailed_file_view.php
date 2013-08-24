@@ -9,6 +9,8 @@
 		</div>  <!-- end div box-head tabs -->
 		<div class="box-content box-nomargin">
 
+			<?php echo $rk; ?>
+
 				<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
 					<thead>
 						<tr>

@@ -230,9 +230,24 @@ class Dashboard extends CI_Controller {
 		
 		
 		$this->load->model("Algo/reader");
-		// $this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
 		$this->reader->mim_Reader($data['file']->f_path);
 		$data['file_read_in'] = $this->reader->get_file_text_array();
+		
+		// $this->load->model("Algo/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		// 
+		// echo  $this->uml_algo->generate_uml();
+		
+	//		    echo $produced_uml_table;
+		
+		
+		// $this->load->model("rq");
+		// $this->rq->mim_Rq("Ryan Young");
+		// $data['rk'] = $this->rq->get_name();
+		
+		$this->load->model("rq");
+		$this->rq->mim_Rq("Ryan Young");
+		$data['rk'] = $this->rq->get_name();
 		
 		$data['title'] = "Detailed File View";
 				

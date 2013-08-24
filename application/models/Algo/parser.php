@@ -15,9 +15,15 @@ class Parser {
   
     var $start_file;
     var $parsed_file;
+
+	private $CI;
     
     //constructor for the parser object.  Accepts the file array
-    function __construct($passed_file_array) {
+	function __construct() {
+		$this->CI =& get_instance();
+	}
+	
+    function mim_Parser($passed_file_array) {
       $this->start_file = $passed_file_array;
       $this->parsed_file = array();
     }
