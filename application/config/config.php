@@ -18,8 +18,8 @@
 //Brians Base URL Below
 // $config['base_url'] = 'http://localhost/xampp/UML_Gen/';
 //Jacks Base URL Below
- $config['base_url'] = 'http://localhost/~youngbuck14188/UML_Gen/';
-
+ // $config['base_url'] = 'http://localhost/~youngbuck14188/UML_Gen/';
+ $config['base_url'] = 'http://jacks-imac.local/UML_Gen/';
 
 /*
 |--------------------------------------------------------------------------
