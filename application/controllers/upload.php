@@ -35,6 +35,9 @@ class Upload extends CI_Controller {
 
 			$this->insert_file_into_db($this->upload->data());
 			
+			$this->load->model('stats_tracker_model');
+			$this->stats_tracker_model->update_stats_tracker('file upload');
+			
 			$this->load->view('upload_result_view', $data);
 
 			// Call our method here to start the parsing and echo the results to to the screen.
