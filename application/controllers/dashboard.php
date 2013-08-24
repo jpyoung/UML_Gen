@@ -149,6 +149,9 @@ class Dashboard extends CI_Controller {
 		//grabbing the all the files associated with this user id
 		$data['user_files'] = $this->get_files_by_user($id);
 		
+		$this->load->model('stats_tracker_model');
+		$data['account_activity'] = $this->stats_tracker_model->get_stats_tracker_by_userid($id);
+		
 		$data['title'] = "Detail User View";
 
 		$this->load->view('detailed_user_view', $data);

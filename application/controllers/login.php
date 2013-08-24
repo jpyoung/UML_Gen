@@ -41,10 +41,11 @@ class Login extends CI_Controller {
 						'password' => $password,
 						'logged_in' => TRUE
 				);
-	
+				
 				$this->session->set_userdata($us_data);
 				//$id=1;
-				$this->update_stats_tracker();
+				$this->load->model('stats_tracker_model');
+				$this->stats_tracker_model->update_stats_tracker('login');
 				redirect('dashboard');
 			} else {
 				//echo "<h1>Could not find any matching username or password.</h1>";
@@ -101,15 +102,6 @@ class Login extends CI_Controller {
 		return false;
    }
 
-	//when a user logs in, this method is called to update the stats_tracker table.
-	//the username and timestamp are entered into this table.  
-	function update_stats_tracker() {
-		$username = $this->session->userdata('username');
-		$ar = array('username' => $username);
-		$this->db->insert('stats_tracker', $ar);
-	}
-	
-	
 
 }
 ?>
