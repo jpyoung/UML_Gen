@@ -9,7 +9,6 @@
 		</div>  <!-- end div box-head tabs -->
 		<div class="box-content box-nomargin">
 
-				
 				<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
 					<thead>
 						<tr>
