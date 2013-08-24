@@ -123,7 +123,8 @@ class Dashboard extends CI_Controller {
 	}
 
 
-	//this is used to go to the user management view page. 
+	//this is used to go to the user management view page.
+	//User Management Tab 
 	function goto_user_management_page() {
 		$data['title'] = "User Management";
 		$data['user_info'] = $this->get_all_users();
@@ -224,7 +225,17 @@ class Dashboard extends CI_Controller {
 			//generate_uml_button
 			$data['selected_file_id'] = "Nothing";
 		}
-	
+		
+		$data['file'] = $this->get_file_by_id($selected_file_id);
+		
+		$this->load->model('reader');
+		$this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
+		//mim_Reader
+		
+		//$f = $this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
+		$data['file_read'] = $this->reader->get_file_text_array();
+		
+		
 		$data['title'] = "Detailed File View";
 				// $this->load->view('detailed_diagrams_view', $data);
 		$this->load->view('detailed_file_view', $data);			
@@ -251,6 +262,17 @@ class Dashboard extends CI_Controller {
        	
 		if($res->num_rows){
 			return $res->result();
+		} 
+		return false;
+	}
+	
+	//function is used to get an individual file by the passed in file_id
+	function get_file_by_id($file_id) {
+		$this->db->where('f_id = ', $file_id);
+        $res = $this->db->get('file');
+       	
+		if($res->num_rows){
+			return $res->row();
 		} 
 		return false;
 	}
