@@ -8,24 +8,7 @@
 			<h3>Detailed File View</h3>
 		</div>  <!-- end div box-head tabs -->
 		<div class="box-content box-nomargin">
-			Detailed FIle View
-			<?php echo $selected_file_id; ?>	
-				<br/>				
-<style>
-	.table_border_top {
-		border-top: 1px solid #a6a6a6;
-		width: 100%; 
-		height: 10px;
-	}
-	
-	.table_border_bottom {
-		border-bottom: 1px solid #a6a6a6;
-		width: 100%; 
-		height: 10px;
-	}
-</style>
-				
-				<div class="table_border_bottom"></div>
+
 				
 				<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
 					<thead>
@@ -55,7 +38,14 @@
 				<div class="table_border_top"></div>
 				
 				<div class="box-content">
-				<p>Jack Young</p>		
+				<p>File Contents - source code</p>
+						<?php
+						echo "<pre>";
+						for ($x = 0; $x < count($file_read_in); $x++) {
+							echo $file_read_in[$x] . "<br/>";
+						}
+						echo "</pre>";
+						?>
 				</div>			
 				
 				<div class="box-content">
