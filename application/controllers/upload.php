@@ -40,6 +40,7 @@ class Upload extends CI_Controller {
 			// Call our method here to start the parsing and echo the results to to the screen.
 		}
 	}
+
 	
 	//Function is used to insert file information into the file table of the database.
 	function insert_file_into_db($data) {

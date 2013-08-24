@@ -26,7 +26,7 @@
 </style>
 				
 				<div class="table_border_bottom"></div>
-				<?php echo count($file_read); ?>
+				
 				<table class='table table-striped dataTable dataTable-noheader dataTable-nofooter table-bordered'>
 					<thead>
 						<tr>
@@ -46,13 +46,17 @@
 							<td><?php echo $file->f_name; ?></td>
 							<td><?php echo $file->f_upload_date; ?></td>
 							<td><?php echo $file->f_last_modified; ?></td>
-							<td>5</td>
+							<td><?php echo count($file_read_in); ?></td>
 						</tr>
 					  	
 					</tbody>
 					</table>
 					
-				<div class="table_border_top"></div>					
+				<div class="table_border_top"></div>
+				
+				<div class="box-content">
+				<p>Jack Young</p>		
+				</div>			
 				
 				<div class="box-content">
 				<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>

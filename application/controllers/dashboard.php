@@ -228,16 +228,14 @@ class Dashboard extends CI_Controller {
 		
 		$data['file'] = $this->get_file_by_id($selected_file_id);
 		
-		$this->load->model('reader');
-		$this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
-		//mim_Reader
 		
-		//$f = $this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
-		$data['file_read'] = $this->reader->get_file_text_array();
-		
+		$this->load->model("reader");
+		// $this->reader->mim_Reader("/Applications/XAMPP/xamppfiles/htdocs/UML_Gen/uploaded_files/apple.java");
+		$this->reader->mim_Reader($data['file']->f_path);
+		$data['file_read_in'] = $this->reader->get_file_text_array();
 		
 		$data['title'] = "Detailed File View";
-				// $this->load->view('detailed_diagrams_view', $data);
+				
 		$this->load->view('detailed_file_view', $data);			
 	}
 
