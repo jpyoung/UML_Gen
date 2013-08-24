@@ -211,12 +211,24 @@ class Dashboard extends CI_Controller {
 		}
 
 
-$data['title'] = "Generate Diagram";
-		// $this->load->view('detailed_diagrams_view', $data);
-$this->load->view('gen_diagrams_view', $data);
+		$data['title'] = "Generate Diagram";
+				// $this->load->view('detailed_diagrams_view', $data);
+		$this->load->view('gen_diagrams_view', $data);
 	}
 
-
+	//when the user selects a given file name link on the UML diagrams page
+	function goto_detailed_file_view($selected_file_id) {
+		if ($selected_file_id != null) {
+			$data['selected_file_id'] = $selected_file_id;
+		} else {
+			//generate_uml_button
+			$data['selected_file_id'] = "Nothing";
+		}
+	
+		$data['title'] = "Detailed File View";
+				// $this->load->view('detailed_diagrams_view', $data);
+		$this->load->view('detailed_file_view', $data);			
+	}
 
 	//function is used to get user by the passed in id
 	//and return the resulting query
