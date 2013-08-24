@@ -229,9 +229,47 @@ class Dashboard extends CI_Controller {
 		$data['file'] = $this->get_file_by_id($selected_file_id);
 		
 		
-		$this->load->model("Algo/reader");
-		$this->reader->mim_Reader($data['file']->f_path);
-		$data['file_read_in'] = $this->reader->get_file_text_array();
+		// $this->load->model("Algo/reader");
+		// 	$this->reader->mim_Reader($data['file']->f_path);
+		// 	$data['file_read_in'] = $this->reader->get_file_text_array();
+		// 	
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		
+		
+		$this->load->model("Algo/file_grabber");
+			$this->file_grabber->mim_File_grabber($data['file']->f_path);
+			$data['file_read_in'] = $this->file_grabber->get_file_text_array();
+			
+		$this->load->model("algo_a/uml_algo");
+		$this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		
+	
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		
+		 	// $this->reader->mim_Reader($data['file']->f_path);
+		 	// $data['file_read_in'] = $this->reader->get_file_text_array();
+		
+		// $this->load->model("Algo/reader");
+		// 	$this->reader->mim_Reader($data['file']->f_path);
+		// 	$data['file_read_in'] = $this->reader->get_file_text_array();
+		
+		
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);	
+		// $ree = $this->uml_algo->get_reader_object();
+		// $data['file_read_in'] = $ree->get_file_text_array();
+		
+		
+			
+		
+		
+	    //$uml_algo = new UML_Algo("Java_Test_Files/outer.java");
+
+	    $produced_uml_table = $this->uml_algo->generate_uml();
+
+	    echo $produced_uml_table;
 		
 		// $this->load->model("Algo/uml_algo");
 		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
@@ -245,9 +283,9 @@ class Dashboard extends CI_Controller {
 		// $this->rq->mim_Rq("Ryan Young");
 		// $data['rk'] = $this->rq->get_name();
 		
-		$this->load->model("rq");
-		$this->rq->mim_Rq("Ryan Young");
-		$data['rk'] = $this->rq->get_name();
+		// $this->load->model("rq");
+		// $this->rq->mim_Rq("Ryan Young");
+		// $data['rk'] = $this->rq->get_name();
 		
 		$data['title'] = "Detailed File View";
 				
