@@ -210,12 +210,24 @@ class Dashboard extends CI_Controller {
 			//generate_uml_button
 			$data['select_file_id'] = "Nothing";
 		}
+		
+		//gather the selected java file contents and generating the UML diagram. 
+		$data['file'] = $this->get_file_by_id($select_file_id);
+		$this->load->model("algo_a/file_grabber");
+		$this->file_grabber->mim_File_grabber($data['file']->f_path);
+		$data['file_read_in'] = $this->file_grabber->get_file_text_array();
+		$this->load->model("algo_a/uml_algo");
+		$this->uml_algo->mim_Uml_algo($data['file']->f_path);
+	    $data['produced_uml_table'] = $this->uml_algo->generate_uml();
 
-
+	    
 		$data['title'] = "Generate Diagram";
 				// $this->load->view('detailed_diagrams_view', $data);
 		$this->load->view('gen_diagrams_view', $data);
 	}
+	
+	
+	
 
 	//when the user selects a given file name link on the UML diagrams page
 	function goto_detailed_file_view($selected_file_id) {
@@ -237,55 +249,15 @@ class Dashboard extends CI_Controller {
 		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
 		
 		
-		$this->load->model("Algo/file_grabber");
-			$this->file_grabber->mim_File_grabber($data['file']->f_path);
-			$data['file_read_in'] = $this->file_grabber->get_file_text_array();
-			
-		$this->load->model("algo_a/uml_algo");
-		$this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		$this->load->model("algo_a/file_grabber");
+		$this->file_grabber->mim_File_grabber($data['file']->f_path);
+		$data['file_read_in'] = $this->file_grabber->get_file_text_array();
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		// 	    $produced_uml_table = $this->uml_algo->generate_uml();
+		// 	    echo $produced_uml_table;
 		
 	
-		// $this->load->model("algo_a/uml_algo");
-		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
-		
-		 	// $this->reader->mim_Reader($data['file']->f_path);
-		 	// $data['file_read_in'] = $this->reader->get_file_text_array();
-		
-		// $this->load->model("Algo/reader");
-		// 	$this->reader->mim_Reader($data['file']->f_path);
-		// 	$data['file_read_in'] = $this->reader->get_file_text_array();
-		
-		
-		// $this->load->model("algo_a/uml_algo");
-		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);	
-		// $ree = $this->uml_algo->get_reader_object();
-		// $data['file_read_in'] = $ree->get_file_text_array();
-		
-		
-			
-		
-		
-	    //$uml_algo = new UML_Algo("Java_Test_Files/outer.java");
-
-	    $produced_uml_table = $this->uml_algo->generate_uml();
-
-	    echo $produced_uml_table;
-		
-		// $this->load->model("Algo/uml_algo");
-		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
-		// 
-		// echo  $this->uml_algo->generate_uml();
-		
-	//		    echo $produced_uml_table;
-		
-		
-		// $this->load->model("rq");
-		// $this->rq->mim_Rq("Ryan Young");
-		// $data['rk'] = $this->rq->get_name();
-		
-		// $this->load->model("rq");
-		// $this->rq->mim_Rq("Ryan Young");
-		// $data['rk'] = $this->rq->get_name();
 		
 		$data['title'] = "Detailed File View";
 				
