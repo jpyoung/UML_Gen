@@ -93,14 +93,12 @@ class Login extends CI_Controller {
 		
 	}
 	
-	function email_exists($submitted_email)
-   {
-          
-           $query = $this->db->query("select * from user where u_username = '" . $submitted_email . "' or u_email = '" . $submitted_email . "'");
-           if ($query->num_rows) {
-                   return $query->row();
-           }
-           return false;
+	function email_exists($submitted_email) { 
+		$query = $this->db->query("select * from user where u_username = '" . $submitted_email . "' or u_email = '" . $submitted_email . "'");
+		if ($query->num_rows) {
+		        return $query->row();
+		}
+		return false;
    }
 
 	//when a user logs in, this method is called to update the stats_tracker table.
