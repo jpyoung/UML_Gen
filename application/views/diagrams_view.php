@@ -30,7 +30,7 @@
 						<tr>
 							<td><?php echo $row->f_id; ?></td>
 							<td><?php echo $row->u_id; ?></td>
-							<td><?php echo $row->f_name; ?></td>
+							<td><?php echo anchor('dashboard/goto_detailed_file_view/' . $row->f_id , $row->f_name)?></td>
 							<td><?php echo $row->f_upload_date; ?></td>
 							<td><?php echo $row->f_last_modified; ?></td>
 							<td>

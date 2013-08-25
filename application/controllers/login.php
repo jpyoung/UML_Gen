@@ -41,9 +41,11 @@ class Login extends CI_Controller {
 						'password' => $password,
 						'logged_in' => TRUE
 				);
-	
+				
 				$this->session->set_userdata($us_data);
 				//$id=1;
+				$this->load->model('stats_tracker_model');
+				$this->stats_tracker_model->update_stats_tracker('login');
 				redirect('dashboard');
 			} else {
 				//echo "<h1>Could not find any matching username or password.</h1>";
@@ -92,17 +94,14 @@ class Login extends CI_Controller {
 		
 	}
 	
-	function email_exists($submitted_email)
-   {
-          
-           $query = $this->db->query("select * from user where u_username = '" . $submitted_email . "' or u_email = '" . $submitted_email . "'");
-           if ($query->num_rows) {
-                   return $query->row();
-           }
-           return false;
+	function email_exists($submitted_email) { 
+		$query = $this->db->query("select * from user where u_username = '" . $submitted_email . "' or u_email = '" . $submitted_email . "'");
+		if ($query->num_rows) {
+		        return $query->row();
+		}
+		return false;
    }
-	
-	
+
 
 }
 ?>

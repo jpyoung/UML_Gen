@@ -38,10 +38,22 @@
 				<a href="dashboard.html"><i class="icon-home icon-white"></i></a>
 			</li>
 			<li>
-				<a href="dashboard.html">
+				<a href="<?php echo base_url(); ?>index.php/dashboard">
 					Dashboard
 				</a>
 			</li>
+			<?php
+				if ( isset($bread_crumb) ) {
+					if ( count($bread_crumb) > 0 ) {
+						for ( $x = 0; $x < count($bread_crumb); $x++ ) {
+							echo '<li><a href="' . base_url() . 'index.php/dashboard/' . $bread_crumb[$x][1] . '">' . $bread_crumb[$x][0] . '</a></li>';
+						}
+					}
+					//echo '<li><a href="dashboard.html">Yes</a></li>';
+				} else {
+					echo '<li><a href="dashboard.html">No</a></li>';
+				}
+			?>
 		</ul>
 	</div>  <!-- end div container-fluid -->
 </div>  <!-- end div breadcrumbs -->

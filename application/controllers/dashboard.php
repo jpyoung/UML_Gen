@@ -123,10 +123,14 @@ class Dashboard extends CI_Controller {
 	}
 
 
-	//this is used to go to the user management view page. 
+	//this is used to go to the user management view page.
+	//User Management Tab 
 	function goto_user_management_page() {
 		$data['title'] = "User Management";
 		$data['user_info'] = $this->get_all_users();
+		
+		$data['bread_crumb'] = array(array("User Management", "goto_user_management_page"));
+		
 		$this->load->view('user_management_view', $data);
 	}
 
@@ -135,6 +139,9 @@ class Dashboard extends CI_Controller {
 	function goto_user_preferences() {
 		$data['title'] = "User Preferences";
 		$data['user_info'] = $this->get_all_users();
+		
+		$data['bread_crumb'] = array(array("User Preferences", "goto_user_preferences"));
+		
 		$this->load->view('user_preferences_view', $data);
 	}
 
@@ -147,6 +154,11 @@ class Dashboard extends CI_Controller {
 
 		//grabbing the all the files associated with this user id
 		$data['user_files'] = $this->get_files_by_user($id);
+		
+		$this->load->model('stats_tracker_model');
+		$data['account_activity'] = $this->stats_tracker_model->get_stats_tracker_by_userid($id);
+		
+		$data['bread_crumb'] = array(array("User Management", "goto_user_management_page"));
 		
 		$data['title'] = "Detail User View";
 
@@ -193,6 +205,8 @@ class Dashboard extends CI_Controller {
 		//getting all the file information 
 		$data['files_info'] = $this->get_all_files();
 		
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
+		
 		$data['title'] = "UML Diagrams";
 		
 		$this->load->view('diagrams_view', $data);
@@ -209,14 +223,62 @@ class Dashboard extends CI_Controller {
 			//generate_uml_button
 			$data['select_file_id'] = "Nothing";
 		}
+		
+		//gather the selected java file contents and generating the UML diagram. 
+		$data['file'] = $this->get_file_by_id($select_file_id);
+		$this->load->model("algo_a/file_grabber");
+		$this->file_grabber->mim_File_grabber($data['file']->f_path);
+		$data['file_read_in'] = $this->file_grabber->get_file_text_array();
+		$this->load->model("algo_a/uml_algo");
+		$this->uml_algo->mim_Uml_algo($data['file']->f_path);
+	    $data['produced_uml_table'] = $this->uml_algo->generate_uml();
 
-
-$data['title'] = "Generate Diagram";
-		// $this->load->view('detailed_diagrams_view', $data);
-$this->load->view('gen_diagrams_view', $data);
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
+	    
+		$data['title'] = "Generate Diagram";
+				// $this->load->view('detailed_diagrams_view', $data);
+		$this->load->view('gen_diagrams_view', $data);
 	}
+	
+	
+	
 
-
+	//when the user selects a given file name link on the UML diagrams page
+	function goto_detailed_file_view($selected_file_id) {
+		if ($selected_file_id != null) {
+			$data['selected_file_id'] = $selected_file_id;
+		} else {
+			//generate_uml_button
+			$data['selected_file_id'] = "Nothing";
+		}
+		
+		$data['file'] = $this->get_file_by_id($selected_file_id);
+		
+		
+		// $this->load->model("Algo/reader");
+		// 	$this->reader->mim_Reader($data['file']->f_path);
+		// 	$data['file_read_in'] = $this->reader->get_file_text_array();
+		// 	
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		
+		
+		$this->load->model("algo_a/file_grabber");
+		$this->file_grabber->mim_File_grabber($data['file']->f_path);
+		$data['file_read_in'] = $this->file_grabber->get_file_text_array();
+		// $this->load->model("algo_a/uml_algo");
+		// $this->uml_algo->mim_Uml_algo($data['file']->f_path);
+		// 	    $produced_uml_table = $this->uml_algo->generate_uml();
+		// 	    echo $produced_uml_table;
+		
+		//echo $this->config->item('uploaded_url');
+		
+		$data['bread_crumb'] = array(array("UML Diagrams", "goto_uml_diagrams"));
+		
+		$data['title'] = "Detailed File View";
+				
+		$this->load->view('detailed_file_view', $data);			
+	}
 
 	//function is used to get user by the passed in id
 	//and return the resulting query
@@ -239,6 +301,17 @@ $this->load->view('gen_diagrams_view', $data);
        	
 		if($res->num_rows){
 			return $res->result();
+		} 
+		return false;
+	}
+	
+	//function is used to get an individual file by the passed in file_id
+	function get_file_by_id($file_id) {
+		$this->db->where('f_id = ', $file_id);
+        $res = $this->db->get('file');
+       	
+		if($res->num_rows){
+			return $res->row();
 		} 
 		return false;
 	}

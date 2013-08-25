@@ -100,6 +100,44 @@
 </div>  <!-- end row-fluid div -->
 
 
+<div class="row-fluid">
+	<div class="span9">
+		<div class="box">
+			<div class="box-head">
+				<h3>Account Activity</h3>
+			</div>
+				<?php if ($account_activity != ''): ?>
+					<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Username</th>
+									<th>Activity Type</th>
+									<th>Time Stamp</th>
+								</tr>
+							</thead>
+							<tbody>
+									<?php foreach($account_activity as $row): ?>
+									<tr>
+										<td><?php echo $row->id; ?></td>
+										<td><?php echo $row->username; ?></td>
+										<td><?php echo $row->activity_type; ?></td>
+										<td><?php echo $row->date; ?></td>
+									</tr>
+								  	<?php endforeach; ?>
+							</tbody>
+					</table>
+					<?php else:?>
+						<h3>Did not find any Account Activity associated to this user.</h3>
+					<?php endif; ?>
+					
+			<div class="box-content">
+			<p class="footer">Number of Results: <strong><?php echo count($account_activity); ?></strong></p>
+			</div>  <!-- end div box-content -->
+		</div>  <!-- end box div -->
+	</div>  <!-- end span div -->
+</div>  <!-- end div row-fluid -->
+
 <!-- start: footer section -->
 	<?php include('common/footer.php'); ?>
 <!-- end: footer section -->

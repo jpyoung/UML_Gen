@@ -248,6 +248,7 @@
 		background: url(http://localhost/~youngbuck14188/UML_Gen/assets/img/back.png);
 		padding-left: 40px;
 		margin-left: 50px;
+		margin-top: 30px;
 	}
 	
 	.edit_p {

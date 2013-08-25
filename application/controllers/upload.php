@@ -35,11 +35,15 @@ class Upload extends CI_Controller {
 
 			$this->insert_file_into_db($this->upload->data());
 			
+			$this->load->model('stats_tracker_model');
+			$this->stats_tracker_model->update_stats_tracker('file upload');
+			
 			$this->load->view('upload_result_view', $data);
 
 			// Call our method here to start the parsing and echo the results to to the screen.
 		}
 	}
+
 	
 	//Function is used to insert file information into the file table of the database.
 	function insert_file_into_db($data) {
@@ -47,7 +51,7 @@ class Upload extends CI_Controller {
 			 'f_id'=> null,
 			 'u_id' => $this->session->userdata('user_id'),
 			 'f_name' => $data['file_name'],
-			 'f_path' => $data['file_path'],
+			 'f_path' => $this->config->item('uploaded_url') . $data['file_name'],
 			'f_upload_date' => date("Y-m-d H:i:s"),
 			 'f_last_modified'=> null
 			);
